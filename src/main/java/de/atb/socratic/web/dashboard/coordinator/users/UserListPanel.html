@@ -1,0 +1,55 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <form wicket:id="form">
+        <div wicket:id="userGroup">
+            <table class="table table-striped tablesorter span9" style="margin-left: 100px !important"
+                   wicket:id="usersContainer">
+                <thead>
+                <tr>
+                    <th class="span1"><input type="checkbox" wicket:id="usersGroupSelector"/></th>
+                    <th class="span1" style="margin-left: -20px !important">Registration date</th>
+                    <th class="span1" style="margin: 0px !important">Name</th>
+                    <th class="span1" style="margin: 0px !important">Processes Leaded</th>
+                    <th class="span1" style="margin: 0px !important">Comments</th>
+                    <th class="span1" style="margin: 0px !important">Likes</th>
+                    <th class="span1" style="margin: 0px !important">Received Likes</th>
+                </tr>
+                </thead>
+                <tbody wicket:id="usersRepeater">
+                <tr>
+                    <td><input type="checkbox" wicket:id="userCheck"/></td>
+                    <td><span class="wordBreakSpan" wicket:id="registrationDate"></span></td>
+                    <td><a href="#" wicket:id="userProfileDetailLink"><img
+                            class="challengeParticipantsImage" src="./img/default-user-profile.png" wicket:id="user_img"
+                            style="max-height: 50px; max-width: 50px;"/></a>&nbsp; <span class="wordBreakSpan"
+                                                                                         wicket:id="user_name"></span></td>
+                    <td><span class="wordBreakSpan" wicket:id="processesLeadedLabel"></span></td>
+                    <td><span class="wordBreakSpan" wicket:id="commentsLabel"></span></td>
+                    <td><span class="wordBreakSpan" wicket:id="likesGivenLabel"></span></td>
+                    <td><span class="wordBreakSpan" wicket:id="likesReceivedLabel"></span></td>
+                </tr>
+                </tbody>
+            </table>
+            <div wicket:id="pagination" class="pull-left"></div>
+        </div>
+    </form>
+</wicket:panel>

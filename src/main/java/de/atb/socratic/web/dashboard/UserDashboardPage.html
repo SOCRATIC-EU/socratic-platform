@@ -1,0 +1,99 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section class="span12 spanSection" id="dashboard">
+        <div class="span8 well">
+            <h3>
+                <span wicket:id="takePartHeaderText"></span>
+            </h3>
+            <!-- challenge -->
+            <h4 style="display: inline-block;">
+                <wicket:message key="challenge.title"/>
+            </h4>
+            <form class="form-inline pull-right" style="display: inline-block; margin-right: 20px;"
+                  wicket:id="challengeParticipationSortingCriteriaForm">
+                <span class="form-inline"><wicket:message key="sort.text"/></span>&nbsp;&nbsp; <select class="form-inline"
+                                                                                                       wicket:id="challengeParticipationSortingCriteriaChoice"></select>
+            </form>
+            <div wicket:id="challengesParticipationList"></div>
+
+            <!-- Idea -->
+            <h4 style="display: inline-block;">
+                <wicket:message key="idea.title"/>
+            </h4>
+            <form class="form-inline pull-right" style="display: inline-block; margin-right: 20px;"
+                  wicket:id="ideaParticipationSortingCriteriaForm">
+                <span class="form-inline"><wicket:message key="sort.text"/></span>&nbsp;&nbsp; <select class="form-inline"
+                                                                                                       wicket:id="ideaParticipationSortingCriteriaChoice"></select>
+            </form>
+            <div wicket:id="ideasParticipationList"></div>
+
+            <!-- Action -->
+            <h4 style="display: inline-block;">
+                <wicket:message key="action.title"/>
+            </h4>
+            <form class="form-inline pull-right" style="display: inline-block; margin-right: 20px;"
+                  wicket:id="actionParticipationSortingCriteriaForm">
+                <span class="form-inline"><wicket:message key="sort.text"/></span>&nbsp;&nbsp; <select class="form-inline"
+                                                                                                       wicket:id="actionParticipationSortingCriteriaChoice"></select>
+            </form>
+            <div wicket:id="actionsParticipationList"></div>
+        </div>
+        <div class="span8 well">
+            <h3>
+                <span wicket:id="leadHeaderText"></span>
+            </h3>
+
+            <!-- challenge -->
+            <h4 style="display: inline-block;">
+                <wicket:message key="challenge.title"/>
+            </h4>
+            <form class="form-inline pull-right" style="display: inline-block; margin-right: 20px;"
+                  wicket:id="challengeLeadSortingCriteriaForm">
+                <span class="form-inline"><wicket:message key="sort.text"/></span>&nbsp;&nbsp; <select class="form-inline"
+                                                                                                       wicket:id="challengeLeadSortingCriteriaChoice"></select>
+            </form>
+            <div wicket:id="challengesLeadList"></div>
+
+            <!-- Idea -->
+            <h4 style="display: inline-block;">
+                <wicket:message key="idea.title"/>
+            </h4>
+            <form class="form-inline pull-right" style="display: inline-block; margin-right: 20px;"
+                  wicket:id="ideaLeadSortingCriteriaForm">
+                <span class="form-inline"><wicket:message key="sort.text"/></span>&nbsp;&nbsp; <select class="form-inline"
+                                                                                                       wicket:id="ideaLeadSortingCriteriaChoice"></select>
+            </form>
+            <div wicket:id="ideasLeadList"></div>
+
+            <!-- Action -->
+            <h4 style="display: inline-block;">
+                <wicket:message key="action.title"/>
+            </h4>
+            <form class="form-inline pull-right" style="display: inline-block; margin-right: 20px;"
+                  wicket:id="actionLeadSortingCriteriaForm">
+                <span class="form-inline"><wicket:message key="sort.text"/></span>&nbsp;&nbsp; <select class="form-inline"
+                                                                                                       wicket:id="actionLeadSortingCriteriaChoice"></select>
+            </form>
+            <div wicket:id="actionsLeadList"></div>
+        </div>
+    </section>
+</wicket:extend>

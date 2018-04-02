@@ -1,0 +1,92 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section>
+        <div class="page-header">
+            <h2>
+                <wicket:message key="page.title"/>&nbsp;
+                <small>
+                    <wicket:message key="search.results.hint"/>&nbsp;
+                    <strong><span wicket:id="queryText"></span></strong></small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="span3 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="60">
+                    <li class="active">
+                        <a href="#campaigns">
+                            <i class="icon-chevron-right"></i>&nbsp;<wicket:message key="campaigns.nav.header"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#ideas">
+                            <i class="icon-chevron-right"></i>&nbsp;<wicket:message key="ideas.nav.header"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#users">
+                            <i class="icon-chevron-right"></i>&nbsp;<wicket:message key="user.nav.header"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#actions">
+                            <i class="icon-chevron-right"></i>&nbsp;<wicket:message key="actions.nav.header"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="span9">
+                <section id="campaigns">
+                    <div class="page-header">
+                        <h3>
+                            <wicket:message key="campaigns.nav.header"/>
+                        </h3>
+                    </div>
+                    <div wicket:id="challengeSearchResultsPanel"></div>
+                </section>
+                <section id="ideas">
+                    <div class="page-header">
+                        <h3>
+                            <wicket:message key="ideas.nav.header"/>
+                        </h3>
+                    </div>
+                    <div wicket:id="ideaSearchResultsPanel"></div>
+                </section>
+                <section id="users">
+                    <div class="page-header">
+                        <h3>
+                            <wicket:message key="user.nav.header"/>
+                        </h3>
+                    </div>
+                    <div wicket:id="userSearchResultsPanel"></div>
+                </section>
+                <section id="actions">
+                    <div class="page-header">
+                        <h3>
+                            <wicket:message key="actions.nav.header"/>
+                        </h3>
+                    </div>
+                    <div wicket:id="actionSearchResultsPanel"></div>
+                </section>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

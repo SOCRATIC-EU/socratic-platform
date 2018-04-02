@@ -1,0 +1,595 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section class="span12 spanSection">
+        <div class="page-header">
+            <h2><span wicket:id="header"></span></h2>
+        </div>
+        <div class="row">
+            <div class="span10">
+                <form wicket:id="campaignForm">
+                    <fieldset class="span11">
+                        <div class="control-group">
+                            <div class="pull-right">
+                                <div>
+                                    <input type="submit" class="btn btn-info" wicket:message="value:submit.text"
+                                           wicket:id="submitTop"/>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="control-group">
+                            <div>
+                                <h3>
+                                    <wicket:message key="challengeDescription.title"/>
+                                </h3>
+                                <hr style="border-bottom: 1px solid #595955; ">
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.title.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="nameValidationBorder">
+                                        <textarea type="text" rows="3" class="input-xxlarge" wicket:id="name"></textarea>
+                                        <span class="help-inline" wicket:id="challengeTitleHelpText">
+                                            <i class="icon-2x icon-info-sign"></i>
+										</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.elevatorPitch.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="elevatorPitchValidationBorder">
+                                        <textarea type="text" rows="3" class="input-xxlarge"
+                                                  wicket:id="elevatorPitch"></textarea>
+                                        <span class="help-inline" wicket:id="elevatorPitchHelpText">
+                                            <i class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.image.input.label"/>
+                                </h4>
+                                <div class="control-group" wicket:id="profilePictureBorder">
+                                    <input type="file" class="input" id="profilePicture" wicket:id="profilePicture">
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" wicket:id="profilePicturePreviewLabel"></label>
+                                    <div class="controls">
+                                        <img style="height: 248px; width: 245px;" id='img-upload'
+                                             wicket:id="profilePicturePreview"/>
+                                        <a href="#" class="btn btn-danger" id="profilePictureClear"
+                                           wicket:id="profilePictureClear">
+                                            <wicket:message key="profile.picture.clear.text"/>
+                                        </a>
+                                        <span class="help-inline" wicket:id="challengeImageHelpText">
+                            				<i class="icon-2x icon-info-sign"></i>
+                            			</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.type.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="socialChallengeValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="socialChallenge"></textarea>
+                                        <span class="help-inline" wicket:id="challengeSocialChallengeTypeHelpText">
+                                    		<i class="icon-2x icon-info-sign"></i>
+                                    	</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.beneficiaries.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="beneficiariesValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="beneficiaries"></textarea>
+                                        <span class="help-inline" wicket:id="challengeBeneficiariesHelpText">
+                                    		<i class="icon-2x icon-info-sign"></i>
+                                    	</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.potentialImpact.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="potentialImpactValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="potentialImpact"></textarea>
+                                        <span class="help-inline" wicket:id="challengePotentialImpactHelpText">
+                                    		<i class="icon-2x icon-info-sign"></i>
+                                    	</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.UNgoal.input.label"/>
+                                </h4>
+                                <div class="form-group" wicket:id="uNGoalTypesValidationBorder">
+                                    <span class="form-inline" wicket:id="unGoalsType"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.support.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="levelOfSupportValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="levelOfSupport"></textarea>
+                                        <span class="help-inline" wicket:id="challengeLevelOfSupportHelpText">
+                                    		<i class="icon-2x icon-info-sign"></i>
+                                    	</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.ideasProposed.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="ideasProposedValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="ideasProposed"></textarea>
+                                        <span class="help-inline" wicket:id="challengeIdeasProposedHelpText">
+                                    		<i class="icon-2x icon-info-sign"></i>
+                                    	</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.keywords.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls left-inner-addon" wicket:id="keywordsValidationBorder">
+                                        <input type="hidden" class="input-xxlarge" wicket:id="keywords">
+                                        <span class="help-inline" wicket:id="challengeKeywordsHelpText">
+                                        		<i class="icon-2x icon-info-sign"></i>
+                                    	</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="challenge.openness.input.label"/>
+                                </h4>
+                                <div class="control-group" wicket:id="publicPrivateGroup">
+                                    <br>
+                                    <table>
+                                        <tr>
+                                            <td><input type="radio" wicket:id="public"/></td>
+                                            <td>&nbsp;<wicket:message key="option.type.public.text"/>
+                                            </td>
+                                            <td>
+                                                <div style="padding-left:7.85%;" align="justify">
+                                                    <wicket:message key="option.type.public.additional.text"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" wicket:id="private"/></td>
+                                            <td>&nbsp;<wicket:message key="option.type.private.text"/>
+                                            </td>
+                                            <td>
+                                                <div style="padding-left:7.8%" align="justify">
+                                                    <wicket:message key="option.type.private.additional.text"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div>
+                                <div>
+                                    <h3>
+                                        <wicket:message key="deadlines.title"/>
+                                    </h3>
+                                    <hr style="border-bottom: 1px solid #595955; ">
+                                </div>
+                                <div>
+                                    <div>
+                                        <table class="table table-condensed pull-right" style="width: 35%;">
+                                            <tr>
+                                                <td style="color: #fff; background: rgb(144, 104, 244)">
+                                                    <b>
+                                                        <wicket:message key="deadlines.definition.input.label"/>
+                                                    </b>
+                                                </td>
+                                                <td style="color: #fff; background: rgb(1, 174, 242)">
+                                                    <b>
+                                                        <wicket:message key="deadlines.ideation.input.label"/>
+                                                    </b>
+                                                </td>
+                                                <td style="color: #fff; background: rgb(62, 224, 204)">
+                                                    <b>
+                                                        <wicket:message key="deadlines.selection.input.label"/>
+                                                    </b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <wicket:message key="deadlines.status.defination.challenge.input.label"/>
+                                                </td>
+                                                <td>
+                                                    <wicket:message key="deadlines.status.ideation.challenge.input.label"/>
+                                                </td>
+                                                <td>
+                                                    <wicket:message key="deadlines.status.selection.challenge.input.label"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div style="display: inline-block">
+                                        <h4>
+                                            <wicket:message key="deadlines.definition.input.label"/>
+                                        </h4>
+                                    </div>
+                                    <div>
+                                        <wicket:message key="deadlines.definition.challenge.input.label"/>
+                                    </div>
+                                    <div>
+                                        <br>
+                                        <div wicket:id="yesNoGroup">
+                                            <div><input type="radio" wicket:id="no"/> &nbsp;<wicket:message
+                                                    key="option.type.no.text"/>
+                                            </div>
+                                            <div><input type="radio" wicket:id="yes"/> &nbsp;<wicket:message
+                                                    key="option.type.yes.text"/>
+                                            </div>
+                                        </div>
+                                        <div><br>
+                                            <table>
+                                                <tr>
+                                                    <td><span wicket:id="challengeOpenForDiscussionStartLabel"></span></td>
+                                                    <td><span wicket:id="challengeOpenForDiscussionStopLabel"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td wicket:id="definitionStartDateValidationBorder"><input type="text"
+                                                                                                               class="input-large"
+                                                                                                               wicket:id="challengeOpenForDiscussionStartDate">
+                                                    </td>
+                                                    <td wicket:id="definitionEndDateValidationBorder"><input type="text"
+                                                                                                             class="input-large"
+                                                                                                             wicket:id="challengeOpenForDiscussionEndDate">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="deadlines.ideation.input.label"/>
+                                </h4>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <wicket:message key="deadlines.ideation.startDate.input.label"/>
+                                        </td>
+                                        <td>
+                                            <wicket:message key="deadlines.ideation.stopDate.input.label"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td wicket:id="ideationStartDateValidationBorder"><input type="text" class="input-large"
+                                                                                                 wicket:id="ideationStartDate">
+                                        </td>
+                                        <td wicket:id="ideationEndDateValidationBorder"><input type="text" class="input-large"
+                                                                                               wicket:id="ideationEndDate"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="deadlines.selection.input.label"/>
+                                </h4>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <wicket:message key="deadlines.selection.startDate.input.label"/>
+                                        </td>
+                                        <td>
+                                            <wicket:message key="deadlines.selection.stopDate.input.label"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td wicket:id="selectionStartDateValidationBorder"><input type="text"
+                                                                                                  class="input-large"
+                                                                                                  wicket:id="selectionStartDate">
+                                        </td>
+                                        <td wicket:id="selectionEndDateValidationBorder"><input type="text" class="input-large"
+                                                                                                wicket:id="selectionEndDate">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!--HIDE/SHOW when needed -->
+                        <div class="control-group" style="display: none;">
+                            <div>
+                                <h3>
+                                    <wicket:message key="references.title"/>
+                                </h3>
+                                <hr style="border-bottom: 1px solid #595955; ">
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="references.title.input.label"/>
+                                </h4>
+                                <div class="control-group" wicket:id="referencesTitleValidationBorder">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <textarea type="text" rows="2" class="input-xxlarge"
+                                                          wicket:id="referencesTitle"></textarea>
+                                            </td>
+                                            <td style="width: 32% ">
+                                                <wicket:message key="references.title.desc.label"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="references.description.input.label"/>
+                                </h4>
+                                <div class="control-group" wicket:id="referencesDescriptionValidationBorder">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <textarea type="text" rows="2" class="input-xxlarge"
+                                                          wicket:id="referencesDescription"></textarea>
+                                            </td>
+                                            <td style="width: 35% ">
+                                                <wicket:message key="references.description.desc.label"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="references.link.input.label"/>
+                                </h4>
+                                <div class="controls">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="input-xxlarge" wicket:id="referencesLink">
+                                            </td>
+                                            <td style="width: 35% ">
+                                                <wicket:message key="references.link.desc.label"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="references.tags.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <input type="hidden" class="input-xxlarge" id="tags">
+                                </div>
+                                <div class="pull-right" style="margin-right: 54%">
+                                    <a href="#" class="btn btn-default" wicket:id="references.addreference.link" disabled>
+                                        <wicket:message key="references.addreference.button"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--HIDE/SHOW when needed-->
+                        <div class="control-group">
+                            <div>
+                                <h3>
+                                    <wicket:message key="participants.title"/>
+                                </h3>
+                                <hr style="border-bottom: 1px solid #595955; ">
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="participants.invite.input.label"/>
+                                </h4>
+                                <fieldset>
+                                    <div class="control-group" id="emailBorder">
+                                        <label for="email" class="control-label">
+                                            <wicket:message key="email.label.text"/>
+                                        </label>
+                                        <div class="control-group" wicket:id="emailTextFieldValidationBorder">
+                                            <input type="text" class="input-xxlarge" id="email"
+                                                   wicket:message="placeholder:email.input.placeholder"
+                                                   wicket:id="emailTextField">
+                                        </div>
+                                    </div>
+                                    <div class="control-group" id="messageBorder">
+                                        <label for="messageToInvitedContact" class="control-label">
+                                            <wicket:message key="message.label.text"/>
+                                        </label>
+                                        <div class="controls">
+                                            <textarea onkeyup="textCounter(this,'remainingC',100); auto_grow(this);"
+                                                      class="input-xxlarge textarea" rows="4" cols="10"
+                                                      id="messageToInvitedContact"
+                                                      wicket:message="placeholder:message.input.placeholder"
+                                                      wicket:id="messageToInvitedContact"></textarea>
+                                            <br/>
+                                            <span id="remainingC" style="color:#999"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <br>
+                            </div>
+                        </div>
+
+                        <!-- File upload -->
+                        <div class="control-group">
+                            <label class="control-label">
+                                <i class="icon-file"></i>&nbsp;
+                                <wicket:message key="attachments.input.label"/>
+                            </label>
+                            <div class="control">
+                                <button type="button" class="btn btn-mini" data-toggle="collapse" data-target=".attachments"
+                                        wicket:id="showAttachmentsForm">
+                                    <i class="icon-upload"></i>&nbsp;
+                                    <wicket:message key="attach.text"/>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="attachments collapse">
+                            <input type="hidden" wicket:id="uploadCacheId">
+                            <div class="row-fluid fileupload-buttonbar">
+                                <div class="span6">
+                                    <!-- The fileinput-button span is used to style the file input field as button -->
+                                    <span class="btn btn-primary btn-small fileinput-button">
+                                            <i class="icon-plus icon-white"></i>
+                                            <wicket:message key="add.files.text"/>
+                                            <input type="file" multiple="multiple" wicket:id="fileupload">
+                                        </span>
+                                    <button type="button" class="btn btn-danger btn-small delete">
+                                        <i class="icon-trash icon-white"></i>
+                                        <wicket:message key="delete.selected.text"/>
+                                    </button>
+                                    <label class="checkbox inline" style="min-width: 60px;">
+                                        <input type="checkbox" class="toggle">
+                                        <wicket:message key="select.all.text"/>
+                                    </label>
+                                </div>
+                                <!-- The global progress information -->
+                                <div class="span6 fileupload-progress fade">
+                                    <!-- The global progress bar -->
+                                    <div class="progress progress-success progress-striped active" role="progressbar"
+                                         aria-valuemin="0" aria-valuemax="100">
+                                        <div class="bar" style="width: 0%;"></div>
+                                    </div>
+                                    <!-- The extended global progress information -->
+                                    <div class="progress-extended">&nbsp;</div>
+                                </div>
+                            </div>
+                            <!-- The loading indicator is shown during file processing -->
+                            <div class="fileupload-loading"></div>
+                            <br>
+                            <!-- The table listing the files available for upload/download -->
+                            <table role="presentation" class="table table-striped">
+                                <tbody class="files" wicket:id="fileTableBody"></tbody>
+                            </table>
+                            <!-- The template to display files available for upload -->
+                            <script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td class="preview"><span class="fade"></span></td>
+        <td class="name"><span>{%=file.name%}</span></td>
+        <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+        {% if (file.error) { %}
+            <td class="error" colspan="2"><span class="label label-important">Error</span> {%=file.error%}</td>
+        {% } else if (o.files.valid && !i) { %}
+            <td>
+                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar" style="width:0%;"></div></div>
+            </td>
+            <td class="start">{% if (!o.options.autoUpload) { %}
+                <button class="btn btn-primary">
+                    <i class="icon-upload icon-white"></i>
+                    <span>Upload</span>
+                </button>
+            {% } %}</td>
+        {% } else { %}
+            <td colspan="2"></td>
+        {% } %}
+        <td class="cancel">{% if (!i) { %}
+            <button class="btn btn-warning">
+                <i class="icon-ban-circle icon-white"></i>
+                <span>Remove</span>
+            </button>
+        {% } %}</td>
+    </tr>
+{% } %}
+
+
+                            </script>
+
+
+                            <!-- The template to display files available for download -->
+                            <script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        {% if (file.error) { %}
+            <td></td>
+            <td class="name"><span>{%=file.name%}</span></td>
+            <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+            <td class="error" colspan="2"></td>
+        {% } else { %}
+            <td class="preview">{% if (file.thumbnail_url) { %}
+                <a href="{%=file.url%}" title="{%=file.name%}" rel="gallery" download="{%=file.name%}"><img src="{%=file.thumbnail_url%}"></a>
+            {% } %}</td>
+            <td class="name">
+                <a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+            </td>
+            <td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+            <td colspan="2"></td>
+        {% } %}
+        <td class="delete">
+            <button class="btn btn-danger btn-small" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}">
+                <i class="icon-trash icon-white"></i>
+            </button>
+            <input type="checkbox" name="delete" value="1" class="checkbox inline">
+        </td>
+    </tr>
+{% } %}
+
+
+
+                            </script>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="submit" class="btn btn-info pull-right" wicket:message="value:submit.text"
+                                       wicket:id="submitBottom"/>
+                                <input type="reset" class="btn pull-right" style="margin-right: 1%;"
+                                       wicket:message="value:cancel.text" wicket:id="cancel"/>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

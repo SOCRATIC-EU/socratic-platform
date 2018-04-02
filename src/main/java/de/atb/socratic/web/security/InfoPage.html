@@ -1,0 +1,174 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section>
+        <!-- header -->
+        <div class="page-header">
+            <h1 wicket:id="header">[content will be replaced with one of the fragments below]</h1>
+            <wicket:fragment wicket:id="headerRegistered">
+                <wicket:message key="header.registered"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerConfirmSuccess">
+                <wicket:message key="header.confirm.success"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerCancelSuccess">
+                <wicket:message key="header.cancel.success"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerRegistrationFailure">
+                <wicket:message key="header.registration.failure"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerRecoverPassword">
+                <wicket:message key="header.recover.password"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerNoSuchUser">
+                <wicket:message key="header.no.such.user"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerResetPWFailure">
+                <wicket:message key="header.reset.pw.failure"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerResetPWSuccess">
+                <wicket:message key="header.reset.pw.success"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerResendRegistrationConfirmation">
+                <wicket:message key="header.resend.registration.confirmation"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerResendRegistrationFailure">
+                <wicket:message key="header.resend.registration.failure"></wicket:message>
+            </wicket:fragment>
+
+            <wicket:fragment wicket:id="headerRegistrationConfirmationSentAgain">
+                <wicket:message key="header.registration.confirmation.sent.again"></wicket:message>
+            </wicket:fragment>
+        </div>
+
+        <!-- main message -->
+        <p class="lead" wicket:id="message">[content will be replaced with one of the fragments below]</p>
+        <wicket:fragment wicket:id="messageRegistered">
+            <wicket:message key="message.registered"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageConfirmSuccess">
+            <wicket:message key="message.confirm.success"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageCancelSuccess">
+            <wicket:message key="message.cancel.success"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageRegistrationFailureNotPending">
+            <wicket:message key="message.registration.failure.not.pending"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageRegistrationFailureTimeout">
+            <wicket:message key="message.registration.failure.timeout"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageRecoverPassword">
+            <wicket:message key="message.recover.password"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageNoSuchUser">
+            <wicket:message key="message.no.such.user"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageResetPWNotPending">
+            <wicket:message key="message.reset.pw.not.pending"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageResetPWTimeout">
+            <wicket:message key="message.reset.pw.timeout"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageResetPWSuccess">
+            <wicket:message key="message.reset.pw.success"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageResendRegistrationConfirmation">
+            <wicket:message key="message.resend.registration.confirmation"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageResendRegistrationFailure">
+            <wicket:message key="message.resend.registration.failure"></wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="messageRegistrationConfirmationSentAgain">
+            <wicket:message key="message.registration.confirmation.sent.again"></wicket:message>
+        </wicket:fragment>
+
+        <!-- additional info -->
+        <p class="lead" wicket:id="info">[content will be replaced with one of the fragments below]</p>
+        <wicket:fragment wicket:id="empty"></wicket:fragment>
+
+        <wicket:fragment wicket:id="loginInfo">
+            <wicket:message key="login.message">
+                <a wicket:id="loginLink">
+                    <wicket:message key="login.link.text"/>
+                </a>
+            </wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="registerInfo">
+            <wicket:message key="register.message">
+                <a wicket:id="registerLink">
+                    <wicket:message key="register.link.text"/>
+                </a>
+            </wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="loginRegisterInfo">
+            <wicket:message key="login.register.message">
+                <a wicket:id="loginLink">
+                    <wicket:message key="login.link.text"/>
+                </a>
+                <a wicket:id="registerLink">
+                    <wicket:message key="register.link.text"/>
+                </a>
+            </wicket:message>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="resendRegistrationInfo">
+            <wicket:message key="resend.registration.message"></wicket:message>
+            <p class="lead">
+                <a wicket:id="resendRegistrationLink">
+                    <wicket:message key="resend.registration.link.text"/>
+                </a>
+            </p>
+        </wicket:fragment>
+
+        <wicket:fragment wicket:id="forgotPasswordInfo">
+            <wicket:message key="forgot.password.message"></wicket:message>
+            <p class="lead">
+                <a href="./recoverPassword">
+                    <wicket:message key="forgot.password.link.text"/>
+                </a>
+            </p>
+        </wicket:fragment>
+    </section>
+</wicket:extend>

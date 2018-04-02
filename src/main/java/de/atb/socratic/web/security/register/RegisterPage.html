@@ -1,0 +1,84 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <link href="assets/css/login-style.css" rel="stylesheet">
+    <style>
+        .alert {
+            margin-top: -40px;
+        }
+    </style>
+    <section>
+        <div wicket:id="feedback"/>
+        <div class="row" style="margin: 0px auto; width:405px; text-align:center;">
+            <div style="width:100%;text-align:left;">
+                <form wicket:id="form" class="login-card">
+                    <a href="./"><img alt="" src="assets/img/soc_login.png"/></a>
+                    <p class="lead">
+                        <wicket:message key="page.header"/>
+                    </p>
+                    <fieldset>
+                        <div class="control-group left-inner-addon" wicket:id="emailValidationBorder">
+                            <i class="icon-globe"></i>
+                            <input type="text" class="input-xlarge" id="email"
+                                   wicket:message="placeholder:email.input.placeholder" wicket:id="email">
+                        </div>
+                        <div class="control-group left-inner-addon" wicket:id="nickNameValidationBorder">
+                            <i class="icon-globe"></i>
+                            <input type="text" class="input-xlarge" id="nickName"
+                                   wicket:message="placeholder:nickname.input.placeholder" wicket:id="nickName">
+                        </div>
+                        <div class="control-group left-inner-addon" wicket:id="firstNameValidationBorder">
+                            <i class="icon-user"></i>
+                            <input type="text" class="input-xlarge" id="firstName"
+                                   wicket:message="placeholder:firstname.input.placeholder" wicket:id="firstName">
+                        </div>
+                        <div class="control-group left-inner-addon" wicket:id="lastNameValidationBorder">
+                            <i class="icon-user"></i>
+                            <input type="text" class="input-xlarge" id="lastName"
+                                   wicket:message="placeholder:lastname.input.placeholder" wicket:id="lastName">
+                        </div>
+                        <div class="control-group left-inner-addon" wicket:id="passwordValidationBorder">
+                            <i class="icon-lock"></i>
+                            <input type="password" class="input-xlarge" id="password"
+                                   wicket:message="placeholder:password.input.placeholder" wicket:id="password">
+                        </div>
+                        <div class="control-group left-inner-addon" wicket:id="confirmPasswordValidationBorder">
+                            <i class="icon-lock"></i>
+                            <input type="password" class="input-xlarge" id="confirmPassword"
+                                   wicket:message="placeholder:password.confirm.input.placeholder" wicket:id="confirmPassword">
+                        </div>
+                        <div class="control-group">
+                            <div class="controls login-help">
+                                <input type="submit" class="btn btn-primary" wicket:message="value:submit.text"
+                                       wicket:id="formSubmit"/>
+                                <wicket:message key="page.login.message">
+                                    <a href="./login" wicket:id="loginLink">
+                                        <wicket:message key="login.link.text"/>
+                                    </a>
+                                </wicket:message>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

@@ -1,0 +1,141 @@
+/*-
+ * #%L
+ * socratic-platform
+ * %%
+ * Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * #L%
+ */
+.login-card {
+	padding: 20px;
+	width: 362px;
+	background-color: #F7F7F7;
+	margin: 0 auto 10px;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+	
+.login-card p{
+    opacity: 0.8;
+	font-size: 12px;
+}
+
+.login-card p.lead{
+    letter-spacing: 1px;
+    position: relative;
+	font-weight: 400;
+	text-align: center;
+	display: block;
+	font-size: 21px;
+}
+
+.login-card input[type=submit] {
+	width: 309px;
+	display: block;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.login-help a {
+	text-decoration: none;
+	color: rgb(36, 63, 96);
+	font-weight: 400;
+	text-align: center;
+	display: inline-block;
+	opacity: 0.6;
+	transition: opacity ease 0.5s;
+}
+
+.login-card a {
+	text-decoration: none;
+	color: rgb(14, 98, 145);
+	font-weight: 400;
+	text-align: center;
+	display: inline-block;
+	transition: opacity ease 0.5s;
+}
+
+.login-card a:hover{
+	color: rgb(14, 98, 145);
+	text-decoration: underline;
+}
+
+.login-help a:hover{
+	color: rgb(36, 63, 96);
+	opacity: 1;
+}
+
+.login-card fieldset{
+	margin-left:28px;
+}
+
+.login-card .loginLogo{
+	height:75px;
+	width: 90%;
+	margin-bottom:15px; 
+	margin-left: 70px;
+}
+
+.login-help{
+	width: 309px;
+}
+
+.left-inner-addon {
+   	position: relative;
+}
+
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+
+.left-inner-addon i {
+    position: absolute;
+    padding: 8px 12px;
+    pointer-events: none;
+}
+
+#menu-wizard, footer, hr{
+	display:none;
+}
+
+/*body{
+	background: url(../img/login_bg.png) repeat;
+}*/
+
+section {
+	padding-top: 15px;
+}
+
+.select2-container-multi .select2-choices{
+	border-radius: 4px;
+	border: 1px solid #CCC;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	margin-bottom: 10px;
+	padding-left: 30px;
+}
+
+.select2-drop.select2-drop-multi.select2-drop-active{
+	margin-top:-10px;
+}
+
+.right{
+	float: right;
+}
+.left{
+	float: left;
+}

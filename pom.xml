@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>eu.socratic</groupId>
+    <artifactId>socratic-platform</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>socratic-platform</name>
+    <description>The SOCRATIC Platform - www.socratic.eu</description>
+
+    <inceptionYear>2016</inceptionYear>
+
+    <organization>
+        <name>Institute for Applied Systems Technology Bremen GmbH (ATB)</name>
+        <url>https://www.atb-bremen.de</url>
+    </organization>
+
+    <scm>
+        <connection>scm:git:git@github.com:SOCRATIC-EU/socratic-platform.git</connection>
+        <developerConnection>scm:git:git@github.com:SOCRATIC-EU/socratic-platform.git</developerConnection>
+        <url>https://github.com/SOCRATIC-EU/socratic-platform.git</url>
+    </scm>
+
+    <licenses>
+        <!--AGPL v3-->
+        <license>
+            <name>AGPL v3</name>
+            <url>https://www.gnu.org/licenses/agpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <repositories>
+        <!-- Add JBoss Maven Repository for JBoss dependencies -->
+        <repository>
+            <id>jboss-public</id>
+            <name>JBoss Maven Public Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- ATB Public Maven Repository; modify as required -->
+        <repository>
+            <id>atb-ext-releases</id>
+            <name>ATB Maven Public RELEASES Repository</name>
+            <url>http://www.atb-bremen.de/artifactory/ext-releases-local/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <generated.sources.dir>src/main/generated</generated.sources.dir>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+        <jboss.javaee6.spec.version>3.0.0.Final</jboss.javaee6.spec.version>
+        <jboss.as.version>7.1.1.Final</jboss.as.version>
+        <weld.version>1.1.Final</weld.version>
+        <jboss.solder.version>3.2.1.Final</jboss.solder.version>
+        <jboss.seam.persistence.version>3.1.0.Final</jboss.seam.persistence.version>
+        <jboss.seam.conversation.version>3.0.0.Final</jboss.seam.conversation.version>
+        <wicket.version>6.12.0</wicket.version>
+        <wicket.bootstrap.version>0.7.7.4</wicket.bootstrap.version>
+        <wicket.tinymce.version>6.12.1</wicket.tinymce.version>
+        <!-- resteasy version used in JBoss ${jboss.as.version} -->
+        <resteasy.version>2.3.2.Final</resteasy.version>
+        <jackson.version>1.9.2</jackson.version>
+        <arquillian.version>1.1.1.Final</arquillian.version>
+        <shrinkwrap.resolvers.version>2.0.0</shrinkwrap.resolvers.version>
+        <slf4j.version>1.6.4</slf4j.version>
+        <maven.plugin.license.min.version>1.14</maven.plugin.license.min.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Override dependency resolver with latest version. This must go *BEFORE* the Arquillian BOM. -->
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.resolver</groupId>
+                <artifactId>shrinkwrap-resolver-bom</artifactId>
+                <version>${shrinkwrap.resolvers.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Arquillian test framework dependencies -->
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${arquillian.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.spec</groupId>
+            <artifactId>jboss-javaee-6.0</artifactId>
+            <version>${jboss.javaee6.spec.version}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.weld</groupId>
+            <artifactId>weld-api</artifactId>
+            <version>${weld.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.solder</groupId>
+            <artifactId>solder-impl</artifactId>
+            <version>${jboss.solder.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam.persistence</groupId>
+            <artifactId>seam-persistence</artifactId>
+            <version>${jboss.seam.persistence.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>${jackson.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>${jackson.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-datetime</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-cdi</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.wicketstuff</groupId>
+            <artifactId>wicketstuff-javaee-inject</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.seam.conversation</groupId>
+            <artifactId>seam-conversation-weld</artifactId>
+            <version>${jboss.seam.conversation.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-bean-validation</artifactId>
+            <version>0.14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-ext</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.agilecoders.wicket</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${wicket.bootstrap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.agilecoders.wicket</groupId>
+            <artifactId>bootstrap-extensions</artifactId>
+            <version>${wicket.bootstrap.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.vaynberg.wicket.select2</groupId>
+            <artifactId>wicket-select2</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.wicketstuff</groupId>
+            <artifactId>wicketstuff-googlecharts</artifactId>
+            <version>${wicket.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.atb.wicketstuff</groupId>
+            <artifactId>wicketstuff-tinymce4</artifactId>
+            <version>${wicket.tinymce.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.3.0.Final</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>1.2.0.Final</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-search</artifactId>
+            <version>4.3.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.34</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>${resteasy.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-oauth</artifactId>
+            <version>${resteasy.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.resteasy</groupId>
+                    <artifactId>resteasy-jaxrs</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-hibernatevalidator-provider</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.imgscalr</groupId>
+            <artifactId>imgscalr-lib</artifactId>
+            <version>4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.medsea.mimeutil</groupId>
+            <artifactId>mime-util</artifactId>
+            <version>2.1.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.linkedin-j</groupId>
+            <artifactId>linkedin-j-core</artifactId>
+            <version>1.0.416</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jcabi</groupId>
+            <artifactId>jcabi-manifests</artifactId>
+            <version>0.7.19</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>1.6.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.1.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>socratic-platform</finalName>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>de/atb/eff/web/components/facebook/facebook.js</include>
+                    <include>de/atb/eff/web/components/facebook/share/FacebookSharePanel.html</include>
+                </includes>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>de/atb/eff/web/components/facebook/facebook.js</exclude>
+                    <exclude>de/atb/eff/web/components/facebook/share/FacebookSharePanel.html</exclude>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <filtering>false</filtering>
+                <directory>src/test/resources</directory>
+            </testResource>
+            <testResource>
+                <filtering>false</filtering>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.zeroturnaround</groupId>
+                    <artifactId>jrebel-maven-plugin</artifactId>
+                    <version>1.1.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.bsc.maven</groupId>
+                    <artifactId>maven-processor-plugin</artifactId>
+                    <version>2.2.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.9</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>buildnumber-maven-plugin</artifactId>
+                    <version>1.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <!-- do not execute maven-processor plugin to generate JPA meta model -->
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.bsc.maven</groupId>
+                                        <artifactId>
+                                            maven-processor-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [2.0.5,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>process</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>${maven.plugin.license.min.version}</version>
+                <configuration>
+                    <!--license to use for the project - resolved from atb-license dependency-->
+                    <licenseName>agpl_v3</licenseName>
+                    <!--<licenseResolver>classpath://de/atb/license</licenseResolver>-->
+
+                    <!--generate license file even if it exists-->
+                    <force>true</force>
+                    <!--specifies the folders to consider for header replacement-->
+                    <roots>
+                        <root>src/main/java</root>
+                        <root>src/main/resources</root>
+                        <root>src/main/webapp</root>
+                    </roots>
+                    <excludes>
+                        <exclude>**/src/main/webapp</exclude>
+                        <exclude>**/*.json</exclude>
+                        <exclude>**/*.uml</exclude>
+                    </excludes>
+
+                    <!--exclude test-scoped dependencies from the 3rd party license-list-->
+                    <excludedScopes>test</excludedScopes>
+
+                    <!--automatically update the copyright if current or inception years change-->
+                    <canUpdateCopyright>true</canUpdateCopyright>
+                    <!--automatically update the project name or description-->
+                    <canUpdateDescription>true</canUpdateDescription>
+
+                    <!--whether the missing file should be used-->
+                    <useMissingFile>true</useMissingFile>
+
+                    <licenseMerges>
+                        <!--consider the following license names to identify the same license-->
+                        <licenseMerge>Apache License, Version 2.0|The Apache Software License, Version 2.0|Apache 2|Apache
+                            License 2.0|AL 2.0
+                        </licenseMerge>
+                    </licenseMerges>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>license-management</id>
+                        <goals>
+                            <!--updates the source's headers according to the specified license-->
+                            <goal>update-file-header</goal>
+
+                            <!--Adds the full-blown license file to the final product-->
+                            <goal>update-project-license</goal>
+
+                        </goals>
+                        <phase>process-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <!--also delete generated hibernate meta-model classes-->
+                        <fileset>
+                            <directory>${basedir}/src/main/generated</directory>
+                            <includes>
+                                <include>**/*.java</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <escapeString>\</escapeString>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <optimize>true</optimize>
+                    <debug>true</debug>
+                    <compilerArgument>-proc:none</compilerArgument>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+                            <targetPath>WEB-INF</targetPath>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>**/web.xml</include>
+                                <include>**/jboss-web.xml</include>
+                                <include>**/socratic-ds.xml</include>
+                            </includes>
+                        </resource>
+                    </webResources>
+                    <archive>
+                        <manifestEntries>
+                            <Dependencies>org.jboss.msc</Dependencies>
+                            <SCM-Revision>${buildNumber}</SCM-Revision>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-metamodel-classes</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${generated.sources.dir}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${generated.sources.dir}</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>jrebel-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-rebel-xml</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.as</groupId>
+                    <artifactId>jboss-as-arquillian-container-remote</artifactId>
+                    <version>${jboss.as.version}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <filters>
+                    <filter>default.properties</filter>
+                </filters>
+                <testResources>
+                    <testResource>
+                        <filtering>true</filtering>
+                        <directory>src/test/resources-default</directory>
+                    </testResource>
+                </testResources>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jboss.as.plugins</groupId>
+                        <artifactId>jboss-as-maven-plugin</artifactId>
+                        <version>${jboss.as.version}</version>
+                        <configuration>
+                            <hostname>provide-your-host-name</hostname>
+                            <username>provide-your-user-name</username>
+                            <password>provide-your-user-password</password>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

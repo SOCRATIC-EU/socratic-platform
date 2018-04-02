@@ -1,0 +1,116 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <style>
+        ul {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .headerSpanSection {
+            position: relative;
+            padding: 10px 20px;
+            margin: 2px 0;
+            font-family: 'ArialMT', 'Arial';
+            font-weight: 400;
+            font-style: normal;
+            font-size: 12px;
+            color: #333333;
+            line-height: normal;
+            background-color: rgba(211, 211, 211, 1);
+            box-sizing: border-box;
+            border: 1px solid rgba(121, 121, 121, 1);
+            border-radius: 0px;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            text-align: left;
+        }
+    </style>
+    <div class="span12 headerSpanSection"
+         style="margin-top: -30px; margin-left: 0px !important; min-height: 275px; width: 100%;"
+         id="challengeImage">
+        <div class="pull-right span3" style="margin-top: -10px !important;">
+            <img style="background-repeat: no-repeat; position: absolute; z-index: 0; height: 271px; width: 255px;"
+                 wicket:id="profilePicturePreview"/>
+        </div>
+        <div class="heading span12" style="margin: 0px !important">
+            <div class="span7" style="min-height: 125px; margin: 0px !important;">
+                <h4>
+                    <span class="wordBreakSpan" wicket:id="shortText"></span>
+                </h4>
+                <h5>
+                    <span class="wordBreakSpan" wicket:id="elevatorPitch"></span><br>
+                </h5>
+            </div>
+            <div class="span4 shareAndFollow pull-right" style="margin: 0px !important; margin-right: -30px !important">
+                <div class="span1" wicket:id="facebookShare"></div>
+                <div class="span2">
+                    <input type="submit" class="btn btn-default" wicket:message="value:add.followers"
+                           wicket:id="addFollowers"/> <input type="submit" class="btn btn-default"
+                                                             wicket:message="value:manage.button" wicket:id="manageLink"/>
+                </div>
+                <br>
+                <div class="span2" style="margin-top: -25px !important;" wicket:id="linkedInShare"></div>
+            </div>
+            <div class="span12">
+                <div class="span4" style="margin: 0px !important">
+                    <h4 style="display: inline;">
+                        <wicket:message key="action.leader"/>
+                    </h4>
+                    <br>
+                    <div class="span4" style="margin: 0px !important">
+                        <a href="#" wicket:id="actionLeaderlink"><img class="challengeParticipantsImage"
+                                                                      src="./img/default-user-profile.png"
+                                                                      wicket:id="userPicture"
+                                                                      style="max-height: 50px; max-width: 50px;"/></a>
+                        &nbsp;&nbsp; <span style="color: #2C9CA6;" class="wordBreakSpan" wicket:id="nickName"></span>&nbsp;&nbsp;
+                        <a href="#" wicket:id="createMessage" title="Click to send message"><img
+                                style="max-height: 50px; max-width: 60px;" src="assets/img/message_image.png"/></a>
+                    </div>
+                </div>
+                <div class="span8" style="margin: 0px !important">
+                    <h4 style="margin-left: 80px; display: inline;">
+                        <wicket:message key="action.team"/>
+                    </h4>
+                    <a href="#" style="margin-left: 10px;" wicket:id="seeAll">See all</a><br>
+                    <div style="margin-left: 50px;">
+                        <ul wicket:id="teamMembers">
+                            <li><a href="#" wicket:id="teamMemberLink"><img
+                                    class="ideaUserImage" wicket:id="con_img" style="max-height: 50px; max-width: 50px;"/></a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="span12">
+                <ul id="actionTabs" class="nav nav-tabs">
+                    <li id="solutionTab"><a wicket:id="solution">Solution</a></li>
+                    <li id="businessModelTab"><a wicket:id="businessModel">Business Model</a></li>
+                    <li id="iterationsTab"><a wicket:id="iterations">Iterations</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="span10" wicket:id="createMessageModalWindow"></div>
+    </div>
+</wicket:panel>

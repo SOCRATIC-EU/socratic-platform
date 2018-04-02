@@ -1,0 +1,106 @@
+/*-
+ * #%L
+ * socratic-platform
+ * %%
+ * Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * #L%
+ */
+.scope-indicator {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.scope-indicator .open {
+    width: 100%;
+    height: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background-color: #4F7A7B;
+}
+
+.scope-indicator .network {
+    width: 66%;
+    height: 66%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background-color: #65B045;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 16.7%;
+    left: 16.7%;
+}
+
+.scope-indicator .staff {
+    width: 33%;
+    height: 33%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background-color: #B4C09C;
+    position: absolute;
+    top: 33%;
+    left: 33%;
+}
+
+.scope-indicator .staff,
+.scope-indicator .network,
+.scope-indicator .open {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+    background-image: none;
+}
+
+.scope-indicator.staff .staff {
+    border: 1px solid #000;
+    -moz-box-shadow: inset 0 0 1px #000000;
+    -webkit-box-shadow: inset 0 0 1px #000000;
+    box-shadow: inset 0 0 1px #000000;
+}
+
+.scope-indicator.staff .network,
+.scope-indicator.staff .open {
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+
+.scope-indicator.network .network {
+    border: 1px solid #000;
+    -moz-box-shadow: inset 0 0 1px #000000;
+    -webkit-box-shadow: inset 0 0 1px #000000;
+    box-shadow: inset 0 0 1px #000000;
+}
+
+.scope-indicator.network .open {
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+
+.scope-indicator.open .open {
+    border: 1px solid #000;
+    -moz-box-shadow: inset 0 0 1px #000000;
+    -webkit-box-shadow: inset 0 0 1px #000000;
+    box-shadow: inset 0 0 1px #000000;
+}
+
+.scope-indicator.none .open,
+.scope-indicator.none .network,
+.scope-indicator.none .staff {
+    background-color: transparent;
+    border: 1px solid #ccc;
+}

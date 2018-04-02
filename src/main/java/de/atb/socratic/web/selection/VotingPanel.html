@@ -1,0 +1,82 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <style type="text/css">
+        .w_captionText {
+            font-size: small;
+            line-height: 20px;
+        }
+
+        #todays-table {
+            margin: 50px;
+            border-bottom: 1px;
+            border-top: 1px;
+        }
+    </style>
+    <div id="todays-table">
+        <table wicket:id="ideas" id="table" style="display: table; width: 100%; padding: 5%;">
+            <tr>
+                <td>
+                    <img wicket:id="voteRelevancyIconPicture" style="width: 52px; height: 58px;"> &nbsp;
+                    <b>
+                        <wicket:message key="table.row.header.relevance"/>
+                    </b>
+                </td>
+                <td>
+                    <img wicket:id="voteFeasibilityIconPicture" style="width: 52px; height: 58px;"> &nbsp;
+                    <b>
+                        <wicket:message key="table.row.header.feasibility"/>
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span wicket:id="relevance"></span>
+                </td>
+                <td>
+                    <span wicket:id="feasibility"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <wicket:message key="table.row.helpText.relevance"/>
+                </td>
+                <td>
+                    <wicket:message key="table.row.helpText.feasibility"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <a class="btn btn-primary pull-right" style="margin-right: 5%;" href="#" wicket:id="saveVoteButton">
+        <wicket:message key="idea.vote.button"/>
+    </a>
+    <a class="btn btn-default pull-right" style="margin-right: 2%;" href="#" wicket:id="cancelButton">
+        <wicket:message key="idea.vote.cancel.button"/>
+    </a>
+
+    <wicket:fragment wicket:id="showRelevanceVotingFragment">
+        <div wicket:id="relevanceVotingPanel" style="margin-left: 10px;"></div>
+    </wicket:fragment>
+    <wicket:fragment wicket:id="showFeasibilityVotingFragment">
+        <div wicket:id="feasibilityVotingPanel" style="margin-left: 10px;"></div>
+    </wicket:fragment>
+</wicket:panel>

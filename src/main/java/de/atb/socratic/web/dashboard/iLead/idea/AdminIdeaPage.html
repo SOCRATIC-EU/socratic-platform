@@ -1,0 +1,66 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <style>
+        .thumbnail {
+            padding: 15px;
+        }
+    </style>
+    <section>
+        <a wicket:id="back">
+            <wicket:message key="back.text"/>
+        </a><br><br>
+        <!-- header -->
+        <div class="thumbnail">
+            <table>
+                <tr>
+                    <td><span class="span10 wordBreakSpan" style="font-size: large" wicket:id="shortText"></span>
+                    </td>
+                    <td><a class="span1 btn btn-primary pull-right" wicket:id="exploreLink">
+                        <wicket:message
+                                key="explore.button"/>
+                    </a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="span2 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav">
+                    <li class="" wicket:id="recentActivity"><a href="#recentActivity">
+                        <wicket:message key="activity.text"/>
+                    </a></li>
+                    <li class="" wicket:id="callToAction"><a href="#callToAction">
+                        <wicket:message key="callToAction.text"/>
+                    </a></li>
+                    <li class="" wicket:id="participants"><a href="#participants">
+                        <wicket:message key="participants.text"/>
+                    </a></li>
+                    <li class="" wicket:id="edit"><a href="#edit">
+                        <wicket:message key="edit.text"/>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="span10">
+                <wicket:child/>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

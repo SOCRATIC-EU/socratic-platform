@@ -1,0 +1,145 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section class="span12 spanSection">
+        <div class="row">
+            <div class="span">
+                <form wicket:id="form">
+                    <div class="page-header">
+                        <h2 style="display: inline;">
+                            <span wicket:id="header"></span>
+                        </h2>
+                        <div class="pull-right">
+                            <img style="height: 40px; margin-top: -2%;" src="assets/img/ActionIterationAddEditPage.png"/>
+                            <input type="submit" class="btn btn-info pull-right" wicket:message="value:submit.text"
+                                   wicket:id="submitTop"/> <br>
+                        </div>
+                    </div>
+                    <div>
+                        <br>
+                        <span class="span6"><wicket:message key="action.iteration.desc1.text"/></span><br>
+                        <span class="span6"><wicket:message key="action.iteration.desc2.text"/></span><br>
+                    </div>
+                    <fieldset class="span11">
+                        <div class="control-group">
+                            <div>
+                                <h4>
+                                    <wicket:message key="actionIteration.title.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="titleValidationBorder">
+                                        <textarea type="text" rows="3" class="input-xxlarge" wicket:id="title"></textarea>
+                                        <span class="help-inline" wicket:id="iteraionTitleHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="actionIteration.aimOfExperiment.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="aimOfExperimentValidationBorder">
+                                        <textarea type="text" rows="3" class="input-xxlarge"
+                                                  wicket:id="aimOfExperiment"></textarea>
+                                        <span class="help-inline" wicket:id="iteraionAimOfExperimentHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="actionIteration.methodology.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="methodologyValidationBorder">
+                                        <textarea type="text" rows="3" class="input-xxlarge" wicket:id="methodology"></textarea>
+                                        <span class="form-inline" wicket:id="iteraionMethodologyHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="actionIteration.plan.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="planValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge" wicket:id="plan"></textarea>
+                                        <span class="help-inline" wicket:id="iteraionPlanHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <span wicket:id="lessonsLearntLabel"></span>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="lessonsLearntValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="lessonsLearnt"></textarea>
+                                        <span class="help-inline" wicket:id="iteraionLessonsLearntHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="actionIteration.image.input.label"/>
+                                </h4>
+                                <div class="control-group" wicket:id="profilePictureBorder">
+                                    <input type="file" class="input" id="profilePicture" wicket:id="profilePicture">
+                                </div>
+                                <div class="control-group">
+                                    <!-- label class="control-label" wicket:id="profilePicturePreviewLabel"></label -->
+                                    <div class="controls">
+                                        <img style="height: 248px; width: 245px;" id='img-upload'
+                                             wicket:id="profilePicturePreview"/> <a href="#" class="btn btn-danger"
+                                                                                    id="profilePictureClear"
+                                                                                    wicket:id="profilePictureClear">
+                                        <wicket:message
+                                                key="profile.picture.clear.text"/>
+                                    </a> <span class="help-inline" wicket:id="iterationImageHelpText"> <i
+                                            class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input style="float: right" type="submit" class="btn btn-info"
+                                           wicket:message="value:submit.text" wicket:id="submitBottom"/>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</wicket:extend>

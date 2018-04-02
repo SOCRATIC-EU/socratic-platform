@@ -1,0 +1,259 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section>
+        <div class="" wicket:id="commonHeaderPanel"></div>
+    </section>
+    <section class="spanSection span12">
+        <div class="row-fluid span table">
+            <div class="row-fluid offset1 span10">
+                <div class="span12">
+                    <!-- action title -->
+                    <h3 class="span8">
+                        <span class="wordBreakSpan" wicket:id="titleOfAction"></span>
+                    </h3>
+                    <div class="span4 pull-right" style="display: inline-flex; padding: 20px 0;">
+                        <span> <i class="icon-comment" style="font-size: x-large"></i> <span
+                                wicket:id="commentsNumberLeftSideOfTheButton"></span>&nbsp;
+                        </span> &nbsp; &nbsp;
+                        <div wicket:id="thumbsUpVoting"></div>
+                        &nbsp; &nbsp; <a class="btn btn-primary" href="#commentsButton">
+                        <wicket:message key="add.comments"/>
+                    </a>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <wicket:message key="action.definition.label.desc"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="descriptionOfAction"></span>
+                        </p>
+                    </div>
+                    <div class="span5 pull-right">
+                        <!-- Action Status/Call to action -->
+                        <div class="well">
+                            <span class="wordBreakSpan" wicket:id="callToAction"></span><br> <br> <br> <a
+                                class="btn btn-primary" style="margin-left: 20%;" data-toggle="collapse"
+                                wicket:id="showIterationLink"> <span> <wicket:message key="show.iterations"/>
+                            </span>
+                        </a>
+                        </div>
+                        <!-- Previous Challenge -->
+                        <div>
+                            <h4>
+                                <wicket:message key="action.definition.previousChallenge.label"/>
+                            </h4>
+                            <span class="wordBreakSpan" wicket:id="previousChallengeText"></span><br>
+                            <br>
+                            <br> <a class="btn btn-primary" style="margin-left: 20%;" data-toggle="collapse"
+                                    wicket:id="showChallengeLink"> <span> <wicket:message key="explore.challenge"/>
+                            </span>
+                        </a>
+                        </div>
+
+                        <!-- Solution Type -->
+                        <div>
+                            <hr style="height: 0.5px; color: #333; background-color: #333;"/>
+                            <h5>
+                                <wicket:message key="action.definition.label.type"/>
+                            </h5>
+                            <p>
+                                <span class="wordBreakSpan" wicket:id="actionTypes"></span>
+                            </p>
+                            <br/>
+                        </div>
+
+                        <!-- Keywords -->
+                        <div>
+                            <h5>
+                                <wicket:message key="action.definition.label.keywords"/>
+                            </h5>
+                            <div class="details" wicket:id="keywordsContainer">
+                                <div class="pull-left">
+                                    <i class="icon-tags"></i>&nbsp;
+                                </div>
+                                <div class="tags-display">
+                                    <small><span class="tag wordBreakSpan" wicket:id="keywords"> <span
+                                            wicket:id="keyword">[keyword]</span>
+                                    </span></small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skills -->
+                        <div>
+                            <h5>
+                                <wicket:message key="action.definition.label.skills"/>
+                            </h5>
+                            <div class="details" wicket:id="skillsContainer">
+                                <div class="pull-left">
+                                    <i class="icon-tags"></i>&nbsp;
+                                </div>
+                                <div class="tags-display">
+                                    <small><span class="tag wordBreakSpan" wicket:id="skills"> <span
+                                            wicket:id="skill">[skill]</span>
+                                    </span></small>
+                                </div>
+                            </div>
+                            <hr style="height: 0.5px; color: #333; background-color: #333;"/>
+                        </div>
+
+                        <!-- Followers -->
+                        <div>
+                            <h5>
+                                <span wicket:id="followersTotalNoLabel"></span>&nbsp;
+                                <wicket:message key="action.label.followers"/>
+                            </h5>
+                        </div>
+
+                        <!-- List view for Team tools -->
+                        <div>
+                            <h5>
+                                <wicket:message key="action.definition.label.teamTools"/>
+                            </h5>
+                            <table>
+                                <tbody>
+                                <tr wicket:id="allTeamTools">
+                                    <td><img style="height: 20px; width: 20px;" src="assets/img/Action_team_tools.png"/></td>
+                                    <td><a wicket:id="toolDescriptionViewLabel" href="#">[link text here]</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <hr style="height: 0.5px; color: #333; background-color: #333;"/>
+                        </div>
+
+                        <!-- lessons learnt -->
+                        <div>
+                            <h4>
+                                <span wicket:id="lessonsLearntTitleLabel"></span>
+                            </h4>
+                            <span class="wordBreakSpan" wicket:id="lessonsLearntTextLabel"></span>
+                        </div>
+
+                        <!-- Action related doc -->
+                        <h5>
+                            <wicket:message key="action.definition.label.docu"/>
+                        </h5>
+                        <ul>
+                            <li wicket:id="attachments"><a class="author" wicket:id="fileLink"><span
+                                    wicket:id="fileLabel"></span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- beneficiaries -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <wicket:message key="action.definition.label.beneficiaries"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="beneficiaries"></span>
+                        </p>
+                    </div>
+
+                    <!-- valueForBeneficiaries -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="valueForBeneficiariesHeader"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="valueForBeneficiaries"></span>
+                        </p>
+                    </div>
+
+                    <!-- impactStakeholders -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="impactStakeholdersHeader"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="impactStakeholders"></span>
+                        </p>
+                    </div>
+
+                    <!-- resourcesForActionImplementation -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="resourcesForActionImplementationHeader"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="resourcesForActionImplementation"></span>
+                        </p>
+                    </div>
+
+                    <!-- implementationPlan -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="implementationPlanHeader"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="implementationPlan"></span>
+                        </p>
+                    </div>
+
+                    <!-- location -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="locationHeader"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="location"></span>
+                        </p>
+                    </div>
+
+                    <!-- reasonForBringingActionForward -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="reasonForBringingActionForwardHeader"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="reasonForBringingActionForward"></span>
+                        </p>
+                    </div>
+
+                    <!-- relatedInnovations -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="relatedInnovationsHeader"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="relatedInnovations"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12" style="margin: 0px !important">
+                    <hr style="height: 1px; border: none; color: #333; background-color: #333;"/>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+                <div wicket:id="commentsContainer">
+                    <h4>
+                        <span wicket:id="commentsNumberTopOnTheButton"></span>
+                    </h4>
+                    <div id="commentsButton" class="idea-comments" wicket:id="commentsPanel"></div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

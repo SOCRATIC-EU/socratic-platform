@@ -1,0 +1,75 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <style>
+        .thumbnail {
+            background-color: white;
+        }
+    </style>
+    <form wicket:id="deleteForm">
+        <div>
+            <a class="btn btn-primary pull-right" href="#" wicket:id="createMessage" title="Click to send message">
+                <wicket:message
+                        key="message.create.button"/>
+            </a>
+        </div>
+        <div wicket:id="messageGroup">
+            <a class="btn btn-danger btn-small" wicket:id="deleteSelected">
+                <wicket:message key="delete.message.button"/>
+            </a>
+            <table class="table table-striped tablesorter" wicket:id="messagesContainer">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" wicket:id="messageGroupSelector"/></th>
+                    <th><h4><span class="wordBreakSpan" wicket:id="tableHeader"></span></h4></th>
+                    <th>
+                        <h4>
+                            <wicket:message key="message.tableHeader.date.Label"/>
+                        </h4>
+                    </th>
+                    <th>
+                        <h4>
+                            <wicket:message key="message.tableHeader.subject.Label"/>
+                        </h4>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr wicket:id="messagesRepeater">
+                    <td><input type="checkbox" wicket:id="messageCheck"/></td>
+                    <td><a href="#" wicket:id="link"><img class="challengeParticipantsImage"
+                                                          src="./img/default-user-profile.png" wicket:id="profilePicture"
+                                                          style="max-height: 50px; max-width: 50px;"/></a>&nbsp;
+                        <span class="wordBreakSpan" wicket:id="nickName"></span>
+                    </td>
+                    <td><span class="wordBreakSpan" wicket:id="date"></span></td>
+                    <td><a href="#" class="text-primary" wicket:id="subjectLink"><span class="wordBreakSpan"
+                                                                                       wicket:id="subject"></span></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="span10" wicket:id="createMessageModalWindow"></div>
+        <div class="span10" wicket:id="displayMessageModalWindow"></div>
+    </form>
+    <div wicket:id="deleteConfirmationModal"></div>
+    <div wicket:id="pagination" class="pull-left"></div>
+</wicket:panel>

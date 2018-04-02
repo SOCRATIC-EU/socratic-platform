@@ -1,0 +1,90 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <div class="tab-content">
+        <section class="span11" id="overview"></section>
+        <div class="span11 well" style="margin: 0px !important;">
+            <h2>
+                <wicket:message key="header.text"/>
+            </h2>
+            <div class="span3">
+                <img style="height: 40px;" src="assets/img/coordinatorDashboard_processes.png"/> &nbsp;
+                <h3 style="display: inline-block;">
+                    <wicket:message key="header.processes.text"/>
+                </h3>
+                <br>
+                <div style="margin-left: 42px;">
+                    <span wicket:id="totalNoChallengesLabel"></span>&nbsp;<wicket:message key="processes.challenges.text"/>
+                    <br>
+                    <span wicket:id="totalNoIdeasLabel"></span>&nbsp;<wicket:message key="processes.ideas.text"/>
+                    <br>
+                    <span wicket:id="totalNoActionsLabel"></span>&nbsp;<wicket:message key="processes.actions.text"/>
+                    <br>
+                    <span wicket:id="totalNoIterationsLabel"></span>&nbsp;<wicket:message key="processes.iterations.text"/>
+                    <br>
+                    <span wicket:id="totalNoBusinessModelsLabel"></span>&nbsp;<wicket:message
+                        key="processes.businessModels.text"/>
+                    <br>
+                    <span>0</span>&nbsp;<wicket:message key="processes.scaling.text"/>
+                    <br>
+                    <span>0</span>&nbsp;<wicket:message key="processes.systemicChanges.text"/>
+                    <br>
+                </div>
+            </div>
+            <div class="span3">
+                <img style="height: 40px;" src="assets/img/coordinatorDashboard_activities.png"/>&nbsp;
+                <h3 style="display: inline-block;">
+                    <wicket:message key="header.activities.text"/>
+                </h3>
+                <br>
+                <div style="margin-left: 55px;">
+                    <span wicket:id="totalNoCommentsLabel"></span>&nbsp;<wicket:message key="activities.comments.text"/>
+                    <br>
+                    <span wicket:id="totalNoLikesLabel"></span>&nbsp;<wicket:message key="activities.likes.text"/>
+                    <br>
+                    <span>0</span>&nbsp;<wicket:message key="activities.references.text"/>
+                    <br>
+                    <span wicket:id="totalNoVotesForIdeaLabel"></span>&nbsp;<wicket:message key="activities.votes.text"/>
+                    <br>
+                    <span>0</span>&nbsp;<wicket:message key="activities.shares.text"/>
+                    <br>
+                </div>
+            </div>
+            <div class="span3">
+                <img style="height: 40px;" src="assets/img/coordinatorDashboard_users.png"/>&nbsp;
+                <h3 style="display: inline-block;">
+                    <wicket:message key="header.users.text"/>
+                </h3>
+                <br>
+                <div style="margin-left: 55px;">
+                    <span wicket:id="totalNoUsersLabel"></span>&nbsp;<wicket:message key="users.registeredUsers.text"/>
+                    <br>
+                    <span wicket:id="totalNoFollowersLabel"></span>&nbsp;<wicket:message key="users.followers.text"/>
+                    <br>
+                    <span wicket:id="totalNoContributorsLabel"></span>&nbsp;<wicket:message key="users.contributors.text"/>
+                    <br>
+                    <span wicket:id="totalNoLeadersLabel"></span>&nbsp;<wicket:message key="users.leaders.text"/>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</wicket:extend>

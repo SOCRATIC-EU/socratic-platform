@@ -1,0 +1,54 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <style>
+        .inline {
+            display: inline-block;
+        }
+
+        .thumbnail {
+            background-color: white;
+        }
+    </style>
+    <div class="span10" style="margin: 0px !important">
+
+        <ul class="thumbnails" wicket:id="actionsContainer">
+            <li class="thumbnail" wicket:id="actionsRepeater">
+                <div class="span5">
+                    <div class="span4" style="margin: 0px !important">
+                        <h3 style="display: inline;">
+                            <span class="wordBreakSpan" wicket:id="shortText"></span>
+                        </h3><br>
+                        <span class="wordBreakSpan" wicket:id="elevatorPitch"></span>
+                    </div>
+                </div>
+                <div class="span2 well pull-right">
+                    <span wicket:id="exploreMsg"></span>
+                    <br/>
+                    <button class="btn" wicket:id="exploreLink">
+                        <span wicket:id="exploreLinkLabel"></span>
+                    </button>
+                </div>
+            </li>
+        </ul>
+        <div wicket:id="pagination" class="pull-left"></div>
+    </div>
+</wicket:panel>

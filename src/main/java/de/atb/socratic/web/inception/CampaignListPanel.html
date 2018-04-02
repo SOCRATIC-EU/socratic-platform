@@ -1,0 +1,87 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <script type="text/javascript">
+        var tour;
+    </script>
+    <div class="row-fluid">
+        <a class="btn btn-primary" wicket:id="addCampaignLink" id="add-wizard" style="margin-left: 30px;">
+            <wicket:message
+                    key="create.campaign.button"/>
+        </a>
+    </div>
+    <br/>
+    <br/>
+    <div class="container">
+        <form wicket:id="deleteForm" id="deleteForm">
+            <div wicket:id="campaignsContainer">
+                <div wicket:id="navigatorHead" class="pull-left"></div>
+                <ul class="thumbnails span12">
+                    <li wicket:id="campaigns">
+                        <div class="thumbnail span11" wicket:id="td.campaign">
+                            <div class="span3" style="margin: 0px !important">
+                                <img style="width: 240px; height: 200px;" wicket:id="profilePicturePreview">
+                            </div>
+                            <div class="span8" style="margin: 0px !important">
+                                <div class="wordBreakSpan">
+                                    <h3>
+                                        <a wicket:message="title:ideas.link.text" wicket:id="ideasLink"><span
+                                                wicket:id="name"></span></a>
+                                    </h3>
+                                    <span class="wordBreakSpan" wicket:id="elevatorPitch"></span> <br>
+                                    <div class="span4" style="margin: 0px !important">
+                                        <div class="span2 pull-left" style="margin: 0px !important">
+                                            <br> <b>
+                                            <wicket:message key="challenge.owner.label"/>
+                                        </b><br> <img
+                                                style="max-width: 40px; max-height: 40px; border-radius: 50%;"
+                                                wicket:id="userPicture"/> <span class="author" style="color: #2C9CA6"
+                                                                                wicket:id="createdBy.nickName"></span>
+                                        </div>
+                                        <div class="span2 pull-right" style="margin: 0px !important">
+                                            <br><br> <i class="icon-comment icon-2x"></i><span wicket:id="challengeCommentLabel"
+                                                                                               style="font-size: small;"></span>&nbsp;
+                                            <i class="icon-thumbs-up icon-2x"></i><span
+                                                wicket:id="thumbsUpVotes" style="font-size: small;"></span>
+                                        </div>
+                                        <div class="span4" style="margin: 0px !important">
+                                            <div class="span4" style="display: inline-block; margin: 0px !important">
+                                                <span wicket:id="status"></span> <span class="dueDate left"
+                                                                                       wicket:id="dueDate"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="well span3 pull-right" style="display: inline-block; margin: 0px !important">
+                                        <span wicket:id="helpText"></span><br> <a style="margin-left: 60px;"
+                                                                                  class="btn btn-default"
+                                                                                  wicket:id="takePartLink">
+                                        <wicket:message key="exploreChallenge.button.text"/>
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</wicket:panel>

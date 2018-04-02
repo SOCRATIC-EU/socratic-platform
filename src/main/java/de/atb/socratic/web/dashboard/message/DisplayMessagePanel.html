@@ -1,0 +1,61 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <div class="span6" style="margin-top: 15px;">
+        <div class="span1">
+            <img class="ideaUserImage" style="max-height: 50px; max-width: 50px;" src="./img/default-user-profile.png"
+                 wicket:id="profilePicture"/>
+        </div>
+        <div class="span2">
+            <span style="color: #2C9CA6" wicket:id="sender.nickName"></span>
+        </div>
+        <div class="span2 pull-right">
+            <a class="btn btn-primary" href="#" wicket:id="createMessage" title="Click to send message">
+                <wicket:message
+                        key="message.send.button"/>
+            </a>
+        </div>
+    </div>
+    <div class="span6">
+        <div class="span1">
+            <span><wicket:message key="message.date.text.label"/></span>
+        </div>
+        <div class="span4">
+            <span class="wordBreakSpan" wicket:id="date"></span>
+        </div>
+    </div>
+    <div class="span6">
+        <div class="span1">
+            <span><wicket:message key="message.subject.text.label"/></span>
+        </div>
+        <div class="span4">
+            <b><span class="wordBreakSpan" wicket:id="subject"></span></b>
+        </div>
+    </div>
+    <div class="span6">
+        <br> <br>
+        <div class="span5">
+            <span class="wordBreakSpan" wicket:id="messageText"></span>
+        </div>
+    </div>
+    <div class="span10" wicket:id="createMessageModalWindow"></div>
+
+</wicket:panel>

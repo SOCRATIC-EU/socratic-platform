@@ -1,0 +1,70 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section id="participants" style="margin-left: 2%;">
+        <div>
+            <div class="page-header">
+                <h3>
+                    <span class="wordBreakSpan"><wicket:message key="default.participants.header"/></span>
+                </h3>
+            </div>
+            <form wicket:id="form">
+                <div wicket:id="participantsList"></div>
+
+                <!-- send invitations -->
+                <fieldset>
+                    <div class="page-header" style="margin-top: 100px;">
+                        <h4>
+                            <wicket:message key="email.header.text"/>
+                        </h4>
+                    </div>
+                    <div class="control-group" id="emailBorder">
+                        <label for="email" class="control-label">
+                            <wicket:message key="email.label.text"/>
+                        </label>
+                        <div class="control-group" wicket:id="emailTextFieldValidationBorder">
+                            <input type="text" class="input-xxlarge" id="email"
+                                   wicket:message="placeholder:email.input.placeholder"
+                                   wicket:id="emailTextField">
+                        </div>
+                    </div>
+                    <div class="control-group" id="messageBorder">
+                        <label for="messageToInvitedContact" class="control-label">
+                            <wicket:message key="message.label.text"/>
+                        </label>
+                        <div class="controls">
+                            <textarea onkeyup="textCounter(this,'remainingC',100); auto_grow(this);"
+                                      class="input-xxlarge textarea"
+                                      rows="4" cols="10" id="messageToInvitedContact"
+                                      wicket:message="placeholder:message.input.placeholder"
+                                      wicket:id="messageToInvitedContact"></textarea>
+                            <br/> <span id="remainingC" style="color: #999"></span>
+                        </div>
+
+                        <a href="#" class="btn btn-danger" wicket:id="sendInvitations">
+                            <wicket:message key="send.invitations"/>
+                        </a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+</wicket:extend>

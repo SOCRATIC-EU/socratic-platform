@@ -1,0 +1,212 @@
+/********************************************************************************/
+/* Small Innovation Status Indicator in Campaigns List 							*/
+/********************************************************************************/
+span.innovation-status-small {
+	font-size: 91%;
+	color: #a0a0a0;
+
+}		
+		
+ul.innovation-status-small {
+	list-style: none;
+	overflow: hidden;
+	font-size: 12px;
+	margin: 0px;
+}
+
+ul.innovation-status-small li {
+	line-height: 25px;
+	float: left;
+}
+
+ul.innovation-status-small li a {
+	color: white;
+	text-decoration: none;
+	padding: 0px 5px 0px 20px;
+	background: rgb(1, 174, 242);
+	position: relative;
+	display: block;
+	float: left;
+	height: 24px;
+}
+
+ul.innovation-status-small li a:after {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+	border-left: 12px solid rgb(1, 174, 242);
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	left: 100%;
+	z-index: 2;
+}
+
+ul.innovation-status-small li a:before {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+	border-left: 12px solid white;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	margin-left: 1px;
+	left: 100%;
+	z-index: 1;
+}
+
+ul.innovation-status-small li.definition a {
+	background: rgb(144, 104, 244);
+}
+ul.innovation-status-small li.definition a:after {
+	border-left-color: rgb(144, 104, 244);
+}
+ul.innovation-status-small li.inception a {
+	/* padding-left: 15px; */
+}
+
+ul.innovation-status-small li.prioritisation a {
+	background: rgb(62, 224, 204);
+}
+
+ul.innovation-status-small li.prioritisation a:after {
+	border-left-color: rgb(62, 224, 204);
+}
+
+ul.innovation-status-small li.implementation a {
+	background: rgb(101, 204, 141);
+}
+
+ul.innovation-status-small li.implementation a:after {
+	border-left-color: rgb(101, 204, 141);
+}
+
+ul.innovation-status-small li.follow_up a {
+	background: rgb(179, 172, 209);
+}
+
+ul.innovation-status-small li.follow_up a:after {
+	border-left-color: rgb(179, 172, 209);
+}
+
+ul.innovation-status-small li a.disabled {
+	background-color: #e0e0e0 !important;
+}
+
+ul.innovation-status-small li a.disabled:after {
+	border-left-color: #e0e0e0 !important;
+}
+
+
+/********************************************************************************/
+/* LARGE Innovation Status Indicator in Single Campaign Page					*/
+/********************************************************************************/
+
+h2.innovation-status-large {
+	font-size: 150%;
+	color: #a0a0a0;
+	margin-bottom: 0;
+}		
+		
+ul.innovation-status-large {
+	list-style: none;
+	overflow: hidden;
+	font-size: 12px;
+	margin: 0px;
+}
+
+ul.innovation-status-large li {
+	line-height: 25px;
+	float: left;
+}
+
+ul.innovation-status-large li a {
+	color: white;
+	text-decoration: none;
+	padding: 17px 15px 17px 20px;
+	background: rgb(1, 174, 242);
+	position: relative;
+	display: block;
+	float: left;
+	width: 80px;
+}
+
+ul.innovation-status-large li a:after {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+	border-left: 20px solid rgb(1, 174, 242);
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	left: 100%;
+	z-index: 2;
+}
+
+ul.innovation-status-large li a:before {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+	border-left: 20px solid white;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	margin-left: 1px;
+	left: 100%;
+	z-index: 1;
+}
+
+ul.innovation-status-large li.definition a {
+	background: rgb(144, 104, 244);
+}
+ul.innovation-status-large li.definition a:after {
+	border-left-color: rgb(144, 104, 244);
+}
+
+ul.innovation-status-large li.inception a {
+	/*padding-left: 15px;*/
+}
+
+ul.innovation-status-large li.prioritisation a {
+	background: rgb(62, 224, 204);
+}
+
+ul.innovation-status-large li.prioritisation a:after {
+	border-left-color: rgb(62, 224, 204);
+}
+
+ul.innovation-status-large li.implementation a {
+	background: rgb(101, 204, 141);
+}
+
+ul.innovation-status-large li.implementation a:after {
+	border-left-color: rgb(101, 204, 141);
+}
+
+ul.innovation-status-large li.follow_up a {
+	background: rgb(179, 172, 209);
+}
+
+ul.innovation-status-large li.follow_up a:after {
+	border-left-color: rgb(179, 172, 209);
+}
+
+ul.innovation-status-large li a.disabled {
+	background-color: #e0e0e0 !important;
+}
+
+ul.innovation-status-large li a.disabled:after {
+	border-left-color: #e0e0e0 !important;
+}

@@ -1,0 +1,44 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!-- Progress bar shown in the table of ideas in the Inception page -->
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+    <ul class="innovation-status-small"> <!-- &nbsp;&nbsp;&nbsp; -->
+        <li class="definition"><a wicket:id="definition">
+            <wicket:message key="definition.status"/>
+        </a></li>
+        <li class="inception"><a wicket:id="inception">
+            <wicket:message key="inception.status"/>
+        </a></li>
+        <li class="prioritisation"><a wicket:id="prioritisation">
+            <wicket:message key="prioritisation.status"/>
+        </a></li>
+        <li class="implementation" style="display: none"><a wicket:id="implementation">
+            <wicket:message key="implementation.status"/>
+        </a></li>
+        <li class="follow_up" style="display: none"><a wicket:id="follow_up">
+            <wicket:message key="follow_up.status"/>
+        </a></li>
+    </ul>
+</wicket:panel>
+</body>
+</html>

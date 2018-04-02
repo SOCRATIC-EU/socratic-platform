@@ -1,0 +1,77 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <fieldset>
+        <legend>
+            <small>
+                <wicket:message key="similar.campaign.header"/>&nbsp;<span wicket:id="similarCampaignNo">1</span></small>
+        </legend>
+        <div class="row">
+            <div class="span10">
+                <h4><span wicket:id="name">[campaign name]</span></h4>
+            </div>
+            <div class="span2">
+                <button class="btn btn-info btn-small pull-right" wicket:id="inspectButton">
+                    <wicket:message key="idea.view.text"/>
+                </button>
+            </div>
+        </div>
+        <p>
+            <wicket:message key="campaign.created.by"/>&nbsp;<strong><span wicket:id="createdBy.nickName"></span></strong>
+            <wicket:message key="campaign.ends.at"/>&nbsp;<strong><span wicket:id="dueDate"></span></strong>
+        </p>
+        <p>
+            <span><wicket:message key="campaign.innovationobjective.name"/></span>&nbsp;<strong><span
+                wicket:id="innovationObjective.name"></span></strong>
+        </p>
+        <div wicket:id="descriptionPanel"></div>
+        <div wicket:id="tags">[content will be replaced with one of the two fragments below]</div>
+        <wicket:fragment wicket:id="showTagsFragment">
+            <label class="control-label" for="shortText"><i class="icon-tags"></i>&nbsp;<small>
+                <wicket:message key="campaign.tags"/>
+            </small>
+            </label>
+            <input type="text" disabled="disabled" style="display:none;" wicket:id="tagsAsString"/>
+        </wicket:fragment>
+        <wicket:fragment wicket:id="emptyFragment"></wicket:fragment>
+        <div class="row">
+            <div class="span11 offset1">
+                <fieldset>
+                    <legend>
+                        <small>
+                            <wicket:message key="idea.header"/>
+                        </small>
+                    </legend>
+                    <div>
+                        <wicket:message key="posted.at"/>
+                        <strong><span wicket:id="postedAt"></span></strong>
+                        <wicket:message key="posted.by"/>
+                        <strong><span wicket:id="postedBy.nickName"></span></strong>
+                    </div>
+                    <blockquote>
+                        <p wicket:id="shortText"></p>
+                    </blockquote>
+                </fieldset>
+            </div>
+        </div>
+    </fieldset>
+    <hr>
+</wicket:panel>

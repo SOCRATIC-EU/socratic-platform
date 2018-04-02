@@ -1,0 +1,56 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <link href="assets/css/login-style.css" rel="stylesheet">
+    <form wicket:id="form" class="login-card">
+        <a href="#" wicket:id="backToWelcomePageLink" title="Return to SOCRATIC Welcome Page"><img alt=""
+                                                                                                   src="assets/img/soc_login.png"/></a>
+        <p class="lead">
+            <wicket:message key="page.lead.message.1"/>
+        </p>
+        <fieldset>
+            <div class="control-group left-inner-addon" wicket:id="emailValidationBorder">
+                <i class="icon-user"></i>
+                <input type="text" class="input-xlarge" id="email" wicket:message="placeholder:email.input.placeholder"
+                       wicket:id="email">
+            </div>
+            <div class="control-group left-inner-addon" wicket:id="passwordValidationBorder">
+                <i class="icon-lock"></i>
+                <input type="password" class="input-xlarge" id="password"
+                       wicket:message="placeholder:password.input.placeholder" wicket:id="password">
+            </div>
+            <div class="control-group">
+                <div class="controls login-help">
+                    <input type="submit" class="btn btn-primary" wicket:message="value:submit.text"/>
+                    <a href="./recoverPassword" wicket:id="forgotPasswordLink" class="left">
+                        <wicket:message key="forgot.password.link.text"/>
+                    </a>
+                    <br/>
+                    <br/>
+                    <wicket:message key="signed.up"/>
+                    <br/>
+                    <input type="submit" wicket:id="registerLink" class="btn btn-default"
+                           wicket:message="value:register.link.text"/>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</wicket:panel>

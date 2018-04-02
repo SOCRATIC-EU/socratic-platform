@@ -1,0 +1,110 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <div class="tab-content">
+        <section class="span11" id="activities">
+            <form wicket:id="form">
+                <div class="span11" style="margin: 0px !important;">
+                    <div class="page-header">
+                        <h2>
+                            <wicket:message key="header.text"/>
+                        </h2>
+                    </div>
+                </div>
+                <div class="well span8 pull-right" style="margin-right: -70px !important;">
+                    <span><wicket:message key="message.users.sort.text"/>&nbsp;&nbsp;</span><select
+                        wicket:id="messageUserSortingChoice"></select>&nbsp;
+                    <wicket:message key="message.processes.sort.text"/>
+                    &nbsp; <select wicket:id="messageProcessSortingChoice"></select>&nbsp;&nbsp; <a class="btn btn-primary"
+                                                                                                    href="#"
+                                                                                                    wicket:id="createMessage"
+                                                                                                    title="Click to send message">
+                    <wicket:message
+                            key="message.create.button"/>
+                </a>
+                </div>
+                <!-- Activity Filtering -->
+                <div class="span2 pull-left" style="margin: 0px !important;">
+                    <h4>
+                        <wicket:message key="typeOfActivity.header.text"/>
+                    </h4>
+                    <select wicket:id="activityCriteriaChoice"></select><br>
+                    <wicket:message key="typeOfActivity.text"/>
+                    &nbsp;<select wicket:id="processesCriteriaChoice"></select>
+                    <!-- Activity Creation Dates -->
+                    <h4>
+                        <wicket:message key="typeOfActivity.creationDates.header.text"/>
+                    </h4>
+                    <div wicket:id="typeOfActivityCreationDates">
+                        <p class="span3" style="margin: 0px !important;">
+                            <input type="radio" wicket:id="allTime"/> &nbsp;
+                            <wicket:message key="typeOfActivityCreationDates.allTime"/>
+                        </p>
+                        <br>
+                        <p class="span3" style="margin: 0px !important;">
+                            <input type="radio" wicket:id="lastWeek"/> &nbsp;
+                            <wicket:message class="form-inline" key="typeOfActivityCreationDates.lastWeek"/>
+                        </p>
+                        <br>
+                        <p class="span3" style="margin: 0px !important;">
+                            <input type="radio" wicket:id="lastMonth"/> &nbsp;
+                            <wicket:message key="typeOfActivityCreationDates.lastMonth"/>
+                        </p>
+                        <br>
+                        <p class="span3" style="margin: 0px !important;">
+                            <input type="radio" wicket:id="lastYear"/> &nbsp;
+                            <wicket:message key="typeOfActivityCreationDates.lastYear"/>
+                        </p>
+                        <br>
+                        <p class="span3" style="margin: 0px !important;">
+                            <input type="radio" wicket:id="betweenDates"/> &nbsp;
+                            <wicket:message key="typeOfActivityCreationDates.betweenDates"/>
+                        </p>
+                        <br> <br>
+                    </div>
+                    <div class="span2">
+                        <wicket:message key="creationDate.from.text"/>
+                        <div class="input-prepend">
+                            <label for="startDate" class="add-on"><i class="icon-calendar"></i></label> <input type="text"
+                                                                                                               class="input-small"
+                                                                                                               id="startDate"
+                                                                                                               wicket:id="activityCreationStartDateField">
+                        </div>
+                        <wicket:message key="creationDate.to.text"/>
+                        <div class="input-append">
+                            <label for="endDate" class="add-on"><i class="icon-calendar"></i></label><input type="text"
+                                                                                                            class="input-small"
+                                                                                                            id="endDate"
+                                                                                                            wicket:id="activityCreationEndDateField">
+                        </div>
+                    </div>
+                    <div class="span2">
+                        <input type="submit" class="btn btn-info" wicket:message="value:filter.process" wicket:id="filterLink"/>
+                    </div>
+                </div>
+                <div class="span9" style="margin: 0px !important;">
+                    <div class="span6" style="margin: 0px !important" wicket:id="listOfActivities"></div>
+                </div>
+                <div class="span10" wicket:id="createMessageModalWindow"></div>
+            </form>
+        </section>
+    </div>
+</wicket:extend>

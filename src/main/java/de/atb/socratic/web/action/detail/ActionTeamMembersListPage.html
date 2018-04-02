@@ -1,0 +1,44 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section>
+        <div class="" wicket:id="commonHeaderPanel"></div>
+    </section>
+    <section class="spanSection span12">
+        <div class="container">
+            <!-- Action Team members-->
+            <h3>
+                <wicket:message key="action.teamMember.label.contributor"/>
+            </h3>
+            <ul class="thumbnails" wicket:id="membersContainer">
+                <li class="thumbnail span4" wicket:id="members">
+                    <div>
+                        <a wicket:id="userProfileDetailLink"> <img class="ideaUserImage" wicket:id="con_img"
+                                                                   style="max-height: 45px;"/></a> <span
+                            class="author wordBreakSpan" wicket:id="con_name"></span>
+                    </div>
+                </li>
+            </ul>
+            <div class="span12 wordBreakSpan pull-right" wicket:id="pagination"></div>
+        </div>
+        <div wicket:id="pagination" class="pull-right"></div>
+    </section>
+</wicket:extend>

@@ -1,0 +1,259 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <link href="assets/css/popUp.css" rel="stylesheet">
+    <script>
+        window.onload = function () {
+            document.getElementById('button').onclick = function () {
+                document.getElementById('modal').style.display = "none"
+            };
+        };
+    </script>
+    <section>
+        <div class="" wicket:id="commonHeaderPanel"></div>
+        <div id="modal" wicket:id="popupContainer">
+            <div class="modalconent">
+                <h2 style="margin-top: 20px;"><span wicket:id="popupHeader"></span></h2>
+                <p><span wicket:id="popupPara1"></span></p>
+                <ul>
+                    <li><span wicket:id="popupList1"></span></li>
+                    <li><span wicket:id="popupList2"></span></li>
+                </ul>
+                <p><span wicket:id="popupPara2"></span></p>
+                <button id="button">
+                    <wicket:message key="popup.model.window.close"/>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="spanSection span12">
+        <div class="row-fluid span table">
+            <div class="row-fluid offset1 span10">
+                <div class="span12">
+                    <div class="span8">
+                        <h2 style="display: inline-block;">
+                            <span class="wordBreakSpan">Business Model</span>
+                        </h2>
+                        <h4 style="display: inline-block;">
+                            <span style="margin-top: -10px;" class="help-inline" wicket:id="businessModelHelpText"> <i
+                                    class="icon-2x icon-info-sign"></i></span>
+                        </h4>
+                    </div>
+                    <div class="pull-right span4" style="display: inline-block;">
+                        <span> <i class="icon-comment" style="font-size: x-large"></i> <span
+                                wicket:id="commentsNumberLeftSideOfTheButton"></span>
+                        </span> &nbsp;
+                        <div style="display: inline-block;" wicket:id="thumbsUpVoting"></div>
+                        &nbsp; <a class="btn btn-primary" href="#commentsButton">
+                        <wicket:message key="add.comments"/>
+                    </a>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span6" style="margin: 0px !important">
+                        <p class="firstPara">
+                            <wicket:message key="businessModel.desc.one"/>
+                            <br> <br>
+                        </p>
+                        <p class="restPara">
+                            <wicket:message key="businessModel.desc.two"/>
+                            <br> <br>
+                            <wicket:message key="businessModel.desc.three"/>
+                            <br> <br>
+                            <wicket:message key="businessModel.desc.four"/>
+                            <br> <br> <a href="https://strategyzer.com/training/courses/mastering-business-models">https://strategyzer.com/training/courses/mastering-business-models</a>
+                        </p>
+                        <a id="show">
+                            <wicket:message key="businessModel.desc.readMore"/>
+                        </a>&#47;&nbsp;<a id="hide">
+                        <wicket:message
+                                key="businessModel.desc.less"/>
+                    </a> <br> <br>
+                    </div>
+                    <div class="span4 offset2">
+                        <!-- show only two contributors and then if more than two are there, show pagination -->
+                        <h5>
+                            <wicket:message key="action.contributors.label.desc"/>
+                        </h5>
+                        <ul class="thumbnails nav" wicket:id="contributorsContainer">
+                            <li wicket:id="contributors" class="span12" style="margin: 0px !important">
+                                <div style="margin-top: 10px;">
+                                    <a wicket:id="userProfileDetailLink"> <img class="ideaUserImage" wicket:id="con_img"
+                                                                               style="max-height: 45px;"/></a> <span
+                                        class="author" wicket:id="con_name"></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div wicket:id="pagination" class="span12 wordBreakSpan pull-right"></div>
+                    </div>
+                    <!-- List view for Team tools -->
+                    <div class="span4 offset2">
+                        <h5>
+                            <wicket:message key="action.definition.label.teamTools"/>
+                        </h5>
+                        <table>
+                            <tbody>
+                            <tr wicket:id="allTeamTools">
+                                <td><img style="height: 20px; width: 20px;" src="assets/img/Action_team_tools.png"/></td>
+                                <td><a wicket:id="toolDescriptionViewLabel" href="#">[link text here]</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span8">
+                        <img style="height: auto;" src="assets/img/businessModel_canvas.png"/>
+                    </div>
+                </div>
+                <div class="span12">
+                    <br> <br>
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="valuePropositionsPicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="valuePropositions.header.label.desc"></span>
+                        </h4>
+                        <p class="span8" style="margin: 0px !important">
+                            <span class="wordBreakSpan" wicket:id="valuePropositions"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="customerSegmentsPicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="customerSegments.header.label.desc"></span>
+                        </h4>
+                        <p class="span8" style="margin: 0px !important">
+                            <span class="wordBreakSpan" wicket:id="customerSegments"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="customerRelationshipsPicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="customerRelationships.header.label.desc"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="customerRelationships"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="channelsPicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="channels.header.label.desc"></span>
+                        </h4>
+                        <p class="span8" style="margin: 0px !important">
+                            <span class="wordBreakSpan" wicket:id="channels"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="keyPartnersPicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="keyPartners.header.label.desc"></span>
+                        </h4>
+                        <p class="span8" style="margin: 0px !important">
+                            <span class="wordBreakSpan" wicket:id="keyPartners"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="keyActivitiesPicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="keyActivities.header.label.desc"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="keyActivities"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="keyResourcesPicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="keyResources.header.label.desc"></span>
+                        </h4>
+                        <p class="span8" style="margin: 0px !important">
+                            <span class="wordBreakSpan" wicket:id="keyResources"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="revenueStreamPicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="revenueStream.header.label.desc"></span>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="revenueStream"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span12">
+                    <div class="span1" style="margin: 0px !important">
+                        <img style="height: 30px;" wicket:id="costStructurePicture"/>
+                    </div>
+                    <div class="span11" style="margin: 0px !important">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="costStructure.header.label.desc"></span>
+                        </h4>
+                        <p class="span8" style="margin: 0px !important">
+                            <span class="wordBreakSpan" wicket:id="costStructure"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span" style="margin: 0px !important">
+                    <hr style="height: 1px; border: none; color: #333; background-color: #333;"/>
+                    <br/> <br/> <br/>
+                </div>
+                <div class="span12" wicket:id="commentsContainer">
+                    <h4>
+                        <span wicket:id="commentsNumberTopOnTheButton"></span>
+                    </h4>
+                    <div id="commentsButton" class="idea-comments" wicket:id="commentsPanel"></div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

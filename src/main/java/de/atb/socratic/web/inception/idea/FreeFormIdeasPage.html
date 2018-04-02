@@ -1,0 +1,66 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section>
+        <div class="page-header">
+            <h1>
+                <wicket:message key="welcome.1"/>
+            </h1>
+            <h3>
+                <wicket:message key="welcome.2"/>
+            </h3>
+            <h3>
+                <wicket:message key="welcome.3">
+                    <a href="" wicket:id="campaignsPageLink">
+                        <wicket:message key="campaigns.page.text"/>
+                    </a>
+                </wicket:message>
+            </h3>
+        </div>
+
+        <div class="page-header">
+            <h2><span wicket:id="campaign.name"></span>
+                <small>(<span wicket:id="noOfIdeas"></span>)</small>
+            </h2>
+        </div>
+
+        <div wicket:id="ideaForm">[will be replaced with one of two fragments at the bottom]</div>
+
+        <div wicket:id="ideaList"></div>
+    </section>
+    <wicket:fragment wicket:id="ideaFormFragment">
+        <div class="row idea-form collapse">
+            <div class="span12">
+                <div wicket:id="ideaFormPanel"></div>
+            </div>
+        </div>
+        <div class="row idea-form collapse in">
+            <div class="span12">
+                <button class="btn" data-toggle="collapse" data-target=".idea-form" wicket:id="showIdeaFormLink">
+                    <wicket:message key="show.form.text"/>
+                </button>
+            </div>
+        </div>
+        <hr>
+        <br>
+    </wicket:fragment>
+    <wicket:fragment wicket:id="emptyFragment"></wicket:fragment>
+</wicket:extend>

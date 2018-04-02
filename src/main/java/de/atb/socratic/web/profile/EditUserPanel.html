@@ -1,0 +1,88 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <script type="text/javascript">
+        var tour;
+    </script>
+    <form wicket:id="form" class="form-horizontal">
+        <fieldset>
+            <div class="control-group" wicket:id="emailValidationBorder">
+                <input type="text" class="input-xxlarge" id="email" wicket:message="placeholder:email.input.placeholder"
+                       wicket:id="email">
+            </div>
+            <div class="control-group" wicket:id="nickNameValidationBorder">
+                <input type="text" class="input-xxlarge" id="nickName" wicket:message="placeholder:nickname.input.placeholder"
+                       wicket:id="nickName">
+            </div>
+            <div class="control-group" wicket:id="firstNameValidationBorder">
+                <input type="text" class="input-xxlarge" id="firstName" wicket:message="placeholder:firstname.input.placeholder"
+                       wicket:id="firstName">
+            </div>
+            <div class="control-group" wicket:id="lastNameValidationBorder">
+                <input type="text" class="input-xxlarge" id="lastName" wicket:message="placeholder:lastname.input.placeholder"
+                       wicket:id="lastName">
+            </div>
+            <div class="control-group" wicket:id="skillsBorder" id="user-tour-skills">
+                <input type="hidden" class="input-xxlarge" wicket:id="skills">
+            </div>
+            <div class="control-group" wicket:id="interestsBorder">
+                <input type="hidden" class="input-xxlarge" wicket:id="interests">
+            </div>
+            <div class="control-group" wicket:id="birthDateValidationBorder">
+                <input type="text" class="input-medium" wicket:message="placeholder:birth.input.placeholder"
+                       wicket:id="birthDate">
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span><wicket:message key="age.label.text"/></span></label>
+                <div class="controls">
+                    <span wicket:id="age"></span>&nbsp;<span wicket:id="ageUnit"></span>
+                </div>
+            </div>
+            <div class="control-group" wicket:id="conditionValidationBorder">
+                <textarea class="input-xxlarge" rows="3" wicket:id="condition"></textarea>
+            </div>
+            <div class="control-group" wicket:id="profilePictureBorder">
+                <input type="file" class="input" id="profilePicture" wicket:id="profilePicture">
+            </div>
+            <div class="control-group">
+                <label class="control-label" wicket:id="profilePicturePreviewLabel"></label>
+                <div class="controls">
+                    <img wicket:id="profilePicturePreview"/><br/>
+                    <a href="#" class="btn btn-danger" id="profilePictureClear" wicket:id="profilePictureClear">
+                        <wicket:message key="profile.picture.clear.text"/>
+                    </a>
+                </div>
+            </div>
+            <div class="control-group" wicket:id="buttonPanel">
+                <br>
+                <div class="controls">
+                    <input type="submit" class="btn btn-primary" wicket:message="value:submit.text" wicket:id="submit"/>
+                    <input type="reset" class="btn btn-danger" wicket:message="value:cancel.text" wicket:id="cancel"/>
+                    <input type="button" class="btn" wicket:message="value:back.text" wicket:id="back"/>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <a href="#" wicket:id="editLink" id="user-tour-buttons">
+        <i class="icon-edit"></i>
+        <wicket:message key="edit.text"/>
+    </a>
+</wicket:panel>

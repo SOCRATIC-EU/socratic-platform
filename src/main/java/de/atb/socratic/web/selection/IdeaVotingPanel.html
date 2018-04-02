@@ -1,0 +1,86 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <form wicket:id="form" style="margin: 0">
+        <div class="well">
+            <table>
+                <tr>
+                    <td><h4>
+                        <span wicket:id="overAllRating"></span>
+                    </h4></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div wicket:id="votingPanel"></div>
+                    </td>
+                    <td wicket:id="totalNoOfVotes"></td>
+                </tr>
+            </table>
+            <br/>
+            <table>
+                <tr>
+                    <td><img wicket:id="voteRelevancyIconPicture" style="width: 26px; height: 29px;">&nbsp;<b>
+                        <wicket:message
+                                key="table.row.relevance"/>
+                    </b></td>
+                    <td style="width: 45%;">
+                        <div class="progress progress-success" style="margin-bottom: 0px;">
+                            <div class="progress-bar" wicket:id=relevancyStatusBar></div>
+                        </div>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;<span wicket:id="relevancyStatusTextlabel"></span></td>
+                </tr>
+            </table>
+            <br/>
+            <table>
+                <tr>
+                    <td><img wicket:id="voteFeasibilityIconPicture" style="width: 26px; height: 29px;">&nbsp;<b>
+                        <wicket:message
+                                key="table.row.feasibility"/>
+                    </b></td>
+                    <td style="width: 45%;">
+                        <div class="progress progress-success" style="margin-bottom: 0px;">
+                            <div class="progress-bar" wicket:id="feasibilityStatusBar"></div>
+                        </div>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;<span wicket:id="feasibilityStatusTextlabel"></span></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <br/>
+                        <a class="btn btn-primary pull-right"
+                           href="#"
+                           wicket:id="dot"
+                           title="Click to vote Star Rating Method">
+                            <wicket:message key="idea.vote.button"/>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div wicket:id="myDotModal"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</wicket:panel>

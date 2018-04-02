@@ -1,0 +1,62 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <div class="container">
+        <div class="navigator right" wicket:id="navigatorHead"></div>
+        <ul class="thumbnails" wicket:id="campaignsContainer">
+            <li class="thumbnail span9" wicket:id="campaigns">
+                <div class="span2" style="margin: 0px !important">
+                    <img wicket:id="profilePicturePreview">
+                </div>
+                <div class="span4" style="margin-left: 10px;">
+                    <h4 style="min-height: 100px;">
+                        <span class="wordBreakSpan" wicket:id="name"></span>
+                    </h4>
+
+                    <div style="display: inline-block;">
+                        <a href="#" wicket:id="link"><img style="max-width: 40px; max-height: 40px; border-radius: 50%;"
+                                                          wicket:id="userPicture"/></a> <span class="author"
+                                                                                              style="color: #2C9CA6"
+                                                                                              wicket:id="createdBy.nickName"></span>
+                    </div>
+                    <div style="display: inline-block; margin-left: 10px;">
+                        <img style="max-width: 40px; max-height: 40px;" src="assets/img/coordinatorsWithGrayBackground.png"/>
+                        <span
+                                wicket:id="contributors"></span>
+                        <wicket:message key="campaign.contributors.text"/>
+                    </div>
+                </div>
+                <div class="well span3" style="margin-left: 5px;">
+                    <div style="min-height: 90px; overflow: visible;">
+                        <span class="wordBreakSpan"><wicket:message key="challenge.explore.text"/></span>
+                    </div>
+                    <div style="margin-left: 20%;">
+                        <a class="btn btn-primary" wicket:id="exploreChallengeLink" id="add-wizardTop">
+                            <wicket:message
+                                    key="campaign.explore.button"/>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div wicket:id="navigatorFoot" class="pull-right"></div>
+</wicket:panel>

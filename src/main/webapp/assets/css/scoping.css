@@ -1,0 +1,132 @@
+/*-
+ * #%L
+ * socratic-platform
+ * %%
+ * Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * #L%
+ */
+.scope-container {
+	width: 350px;
+	height: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.scope-container .selected {
+	border: 1px solid #000;
+	-moz-box-shadow:    inset 0 0 10px #000000;
+	-webkit-box-shadow: inset 0 0 10px #000000;
+	box-shadow:         inset 0 0 10px #000000;
+}
+
+.scope-container .not-selected {
+	border: 1px solid #ccc;
+	-moz-box-shadow:    inset 0 0 10px transparent;
+	-webkit-box-shadow: inset 0 0 10px transparent;
+	box-shadow:         inset 0 0 10px transparent;
+}
+
+.scope-container .open {
+	width: 100%;
+	height: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+}
+
+.scope-container .selected.open, .scope-container .colored.open {
+	background-color: #4F7A7B;
+}
+
+.scope-container .network {
+	width: 66%;
+	height: 66%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	top: 16.7%;
+	left: 16.7%;
+}
+.scope-container .selected.network, .scope-container .colored.network {
+	background-color: #65B045;
+}
+
+.scope-container .staff {
+	width: 33%;
+	height: 33%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	position: absolute;
+	top: 33%;
+	left: 33%;
+	background-image: url(http://cdn5.iconfinder.com/data/icons/duesseldorf/32/home.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.scope-container .selected.staff, .scope-container .colored.staff {
+	background-color: #B4C09C;	
+}
+
+.scope-container label {
+	display: block;
+	text-align: center;
+	position: relative;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	font-weight: bold;
+	color: #000;
+	cursor: pointer;	
+	text-shadow: none;
+}
+
+.scope-container .colored label,
+.scope-container .selected label {
+	color: white;
+	text-shadow: 1px 1px 0px #000;
+}
+
+.scope-container .selected label:hover,
+.scope-container .colored label:hover {
+	text-shadow: 1px 1px 0px transparent;
+}
+
+.scope-container .staff > label {
+	top: 75%;
+}
+
+.scope-container .network > label {
+	top: 87%;
+}
+
+.scope-container .open > label {
+	top: 92%;
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+.scope-container {
+	width: 280px;
+	height: 280px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+}

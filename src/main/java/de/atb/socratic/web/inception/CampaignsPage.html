@@ -1,0 +1,44 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section class="span12 spanSection">
+        <div class="page-header" style="padding-left: 20px;">
+            <h2>
+                <wicket:message key="list.header"/>
+            </h2>
+            <h4>
+                <wicket:message key="page.information"/>
+            </h4>
+            <br/>
+        </div>
+        <br/><br/>
+        <div class="accordion pull-right" id="campaignSorting">
+            <div class="span3">
+                <form class="form-inline" wicket:id="sortingCriteriaForm">
+                    <span class="form-inline"><wicket:message key="sort.text"/></span>&nbsp;&nbsp; <select class="form-inline"
+                                                                                                           wicket:id="sortingCriteriaChoice"></select>
+                </form>
+
+            </div>
+        </div>
+        <div wicket:id="campaignList"></div>
+    </section>
+</wicket:extend>

@@ -1,0 +1,61 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <style>
+        .thumbnail {
+            background-color: white;
+        }
+    </style>
+    <form wicket:id="form">
+        <div class="pull-right">
+            <span><wicket:message key="message.paricipants.sort.text"/></span>&nbsp;&nbsp;
+            <select style="margin-top: 10px;" wicket:id="messageParicipantsSortingChoice"></select>&nbsp;&nbsp;
+            <a class="btn btn-primary" href="#" wicket:id="createMessage" title="Click to send message">
+                <wicket:message
+                        key="message.create.button"/>
+            </a>
+        </div>
+        <div wicket:id="userGroup">
+            <table class="table table-striped tablesorter" wicket:id="participantsContainer">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" wicket:id="userGroupSelector"/></th>
+                    <th>Name</th>
+                    <th>No Of Comments Posted</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr wicket:id="participantsRepeater">
+                    <td><input type="checkbox" wicket:id="userCheck"/></td>
+                    <td><a href="#" wicket:id="link"><img class="challengeParticipantsImage"
+                                                          src="./img/default-user-profile.png" wicket:id="profilePicture"
+                                                          style="max-height: 50px; max-width: 50px;"/></a>&nbsp; <span
+                            class="wordBreakSpan"
+                            wicket:id="nickName"></span></td>
+                    <td><span class="wordBreakSpan" wicket:id="noOfCommentsToIdea"></span></td>
+                </tr>
+                </tbody>
+            </table>
+            <div wicket:id="pagination" class="pull-left"></div>
+        </div>
+        <div class="span10" wicket:id="createMessageModalWindow"></div>
+    </form>
+</wicket:panel>

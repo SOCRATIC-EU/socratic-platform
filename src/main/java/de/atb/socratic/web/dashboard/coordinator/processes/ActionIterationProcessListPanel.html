@@ -1,0 +1,81 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <form wicket:id="form">
+        <div wicket:id="actionIterationGroup">
+            <h3>
+                Action Iterations
+            </h3>
+            <table class="table table-striped tablesorter span10" style="margin: 0px !important"
+                   wicket:id="actionIterationsContainer">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" wicket:id="actionIterationGroupSelector"/></th>
+                    <th>Creation date</th>
+                    <th>
+                        <div class="span5" style="margin: 0px !important">Title</div>
+                        <br>
+                        <div class="span1" style="margin: 0px !important">Followers</div>
+                        <div class="span1">Contributors</div>
+                        <div class="span1">Comments</div>
+                        <div class="span1">Likes</div>
+                    </th>
+                    <th>Process</th>
+                    <th>Leader</th>
+                </tr>
+                </thead>
+                <tbody wicket:id="actionIterationsRepeater">
+                <tr>
+                    <td class="span1"><input type="checkbox" wicket:id="actionIterationCheck"/></td>
+                    <td class="span1"><span class="wordBreakSpan" wicket:id="createdOn"></span></td>
+                    <td class="span6">
+                        <div class="span5" style="margin: 0px !important">
+                            <span class="wordBreakSpan" wicket:id="name"></span> <br>
+                        </div>
+
+                        <div class="span1" style="margin: 0px !important">
+                            <img src="assets/img/followers_image.png" style="max-height: 30px; max-width: 30px;"/>&nbsp;
+                            <span wicket:id="followersTotalNoLabel"></span>
+                        </div>
+                        <div class="span1">
+                            <img src="assets/img/users.png" style="max-height: 30px; max-width: 30px;"/>&nbsp; <span
+                                class="wordBreakSpan" wicket:id="contributors"></span>
+                        </div>
+                        <div class="span1">
+                            <i class="icon-comment icon-1x"></i>&nbsp;<span wicket:id="actionIterationCommentLabel"></span>
+                        </div>
+                        <div class="span1">
+                            <i class="icon-thumbs-up icon-1x"></i>&nbsp;<span wicket:id="thumbsUpVotes"
+                                                                              style="font-size: medium;"></span>
+                        </div>
+                    </td>
+                    <td class="span2"><span class="wordBreakSpan" wicket:id="processStatus"></span></td>
+                    <td class="span2"><a href="#" wicket:id="userProfileDetailLink"><img
+                            class="challengeParticipantsImage" src="./img/default-user-profile.png" wicket:id="leader_img"
+                            style="max-height: 50px; max-width: 50px;"/></a>&nbsp; <span class="wordBreakSpan"
+                                                                                         wicket:id="leader_name"></span></td>
+                </tr>
+                </tbody>
+            </table>
+            <div wicket:id="pagination" class="pull-left"></div>
+        </div>
+    </form>
+</wicket:panel>

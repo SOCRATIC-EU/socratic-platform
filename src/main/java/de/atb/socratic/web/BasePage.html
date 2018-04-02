@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+
+<html xmlns:wicket="http://wicket.apache.org" lang="en">
+<head>
+    <meta wicket:id="chrome-frame">
+    <meta charset="utf-8">
+    <title wicket:id="pageTitle">[PAGE TITLE GOES HERE]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <link href="assets/css/bootstrap-tour.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/eff.css" rel="stylesheet">
+    <link href="assets/css/innovation-status.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/kendo/jquery-ui-1.10.3.custom.min.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/kendo/kendo.common.min.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/kendo/kendo.default.min.css" media="all"/>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap CSS fixes for IE6 -->
+    <!--[if lt IE 7]>
+    <link rel="stylesheet" href="assets/css/fileupload/bootstrap-ie6.min.css"><![endif]-->
+
+    <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
+    <!--[if gte IE 8]>
+    <script src="assets/js/fileupload/cors/jquery.xdr-transport.js"></script><![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script>
+        var shiftWindow = function () {
+            scrollBy(0, -60)
+        };
+        window.addEventListener("hashchange", shiftWindow);
+
+        function load() {
+            if (window.location.hash)
+                shiftWindow();
+        }
+    </script>
+    <style>
+        .blue {
+            color: #04C !important;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar" id="body" onload="load();">
+<div class="container">
+    <div wicket:id="navbar" id="menu-wizard"></div>
+    <ul id="tabs" class="nav nav-tabs subnavigation" wicket:id="subnavContainer">
+        <li id="challengesTab"><a href="#" wicket:id="challenges">
+            <wicket:message key="subnav.challenges"/>
+        </a></li>
+        <li id="actionsTab"><a href="#" wicket:id="actions">
+            <wicket:message key="subnav.actions"/>
+        </a></li>
+        <li id="impactStoriesTab"><a href="#" wicket:id="impactStories">
+            <wicket:message key="subnav.impactstories"/>
+        </a></li>
+    </ul>
+</div>
+
+<div class="container">
+    <section>
+        <!-- a boostrap styled global feedback panel -->
+        <div wicket:id="feedbackPanel"></div>
+
+        <!-- display cookie information -->
+        <div wicket:id="cookiesContainer" class="alert alert-success alert-dismissable">
+            <a href="#" wicket:id="cookieCloseButton" class="close" data-dismiss="alert" aria-label="close">×</a>
+
+            <span class="text"><wicket:message key="cookie.text1"/></span> <br>
+            <wicket:message key="cookie.text2"/>&nbsp;<a href="#">
+            <wicket:message key="cookie.link.text"/>
+        </a>
+        </div>
+        <!-- Page content goes here -->
+        <wicket:child/>
+    </section>
+
+    <hr>
+
+    <footer>
+        <div wicket:id="footer">
+            <div wicket:id="credits">
+                <p>
+                    <span wicket:id="copyright"></span>
+                </p>
+                <p>
+                    <span>SVN Revision: </span><span wicket:id="buildNumber"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</div> <!-- /container -->
+</body>
+</html>

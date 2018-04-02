@@ -1,0 +1,53 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <form wicket:id="form">
+        <div wicket:id="activityGroup">
+            <table class="table table-striped tablesorter span9" style="margin-left: 100px !important"
+                   wicket:id="activitiesContainer">
+                <thead>
+                <tr>
+                    <th class="span1"><input type="checkbox" wicket:id="activitiesGroupSelector"/></th>
+                    <th class="span1" style="margin-left: -20px !important">Creation date</th>
+                    <th class="span1" style="margin: 0px !important">Activity</th>
+                    <th class="span1" style="margin: 0px !important">Process</th>
+                    <th class="span1" style="margin: 0px !important">Content</th>
+                    <th class="span1" style="margin: 0px !important">User</th>
+                </tr>
+                </thead>
+                <tbody wicket:id="activitiesRepeater">
+                <tr>
+                    <td><input type="checkbox" wicket:id="activityCheck"/></td>
+                    <td><span class="wordBreakSpan" wicket:id="performedAt"></span></td>
+                    <td><span class="wordBreakSpan" wicket:id="activityType"></span></td>
+                    <td><span class="wordBreakSpan" wicket:id="processName"></span></td>
+                    <td><span class="wordBreakSpan" wicket:id="content"></span></td>
+                    <td><a href="#" wicket:id="userProfileDetailLink"><img
+                            class="challengeParticipantsImage" src="./img/default-user-profile.png" wicket:id="leader_img"
+                            style="max-height: 50px; max-width: 50px;"/></a>&nbsp; <span class="wordBreakSpan"
+                                                                                         wicket:id="leader_name"></span></td>
+                </tr>
+                </tbody>
+            </table>
+            <div wicket:id="pagination" class="pull-left"></div>
+        </div>
+    </form>
+</wicket:panel>

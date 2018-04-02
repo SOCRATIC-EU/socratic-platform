@@ -1,0 +1,54 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <ul class="thumbnails" wicket:id="iterationsContainer">
+        <li class="thumbnail" wicket:id="iterations">
+            <div class="span3" style="margin: 0px !important;">
+                <img style="width: 240px; height: 200px;" wicket:id="profilePicturePreview">
+            </div>
+            <div class="span4">
+                <h4 style="display: inline-block;">
+                    <wicket:Message key="iterationNumber.text"/>
+                    <span wicket:id="iterationNumberLabel"></span>
+                </h4>
+                <h4>
+                    <span class="wordBreakSpan" wicket:id="title"></span>
+                </h4>
+                <i class="icon-comment icon-2x"></i>&nbsp; <span wicket:id="iterationCommentLabel"
+                                                                 style="font-size: medium;"></span> &nbsp; <i
+                    class="icon-thumbs-up icon-2x"></i>&nbsp; <span
+                    wicket:id="thumbsUpVotes" style="font-size: medium;"></span>
+            </div>
+            <div class="well span3">
+                <div style="min-height: 100px; overflow: visible;">
+                    <span class="wordBreakSpan" wicket:id="callToAction"></span>
+                </div>
+                <div style="margin-left: 25%;">
+                    <a class="btn btn-primary" wicket:id="exploreContactLink" id="add-wizardTop">
+                        <wicket:message
+                                key="iteration.exploreContact.button"/>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div wicket:id="pagination" class="pull-right"></div>
+</wicket:panel>

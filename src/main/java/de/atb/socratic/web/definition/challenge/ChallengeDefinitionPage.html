@@ -1,0 +1,186 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section>
+        <div class="" wicket:id="commonHeaderPanel"></div>
+    </section>
+    <section class="spanSection span12">
+        <div class="row-fluid span table">
+            <div class="row-fluid offset1 span10">
+                <div class="span12 offset1">
+                    <!-- header -->
+                    <h2>
+                        <wicket:message key="challenge.definition.label.head"/>
+                    </h2>
+                    <div>
+                        <span class="span7 wordBreakSpan" wicket:id="noOfDays"></span> <span class="span8 wordBreakSpan"
+                                                                                             style="font-size: medium; margin: 0px !important"> <wicket:message
+                            key="challenge.definition.label.info"/></span>
+                        <div class="span6" style="margin-top: 15px; margin-left: 0px !important; font-size: medium;">
+                            <a href="#" wicket:id="definitionGuidelines">
+                                <wicket:message
+                                        key="definition.guidelines.link.label"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span12" style="margin: 0px !important">
+                    <hr style="height: 1px; border: none; color: #333; background-color: #333;"/>
+                    <!-- elevatorPitch -->
+                    <div class="span7 wordBreakSpan">
+                        <span style="font-size: large" wicket:id="elevatorPitch"></span>
+                    </div>
+
+                    <!-- total no of comments, likes & comment buttons -->
+                    <div class="span4 pull-right" style="display: inline-flex; padding: 20px 0;">
+                        <i class="icon-comment" style="font-size: x-large"></i>&nbsp;&nbsp; <span style="margin-top: 6px;"
+                                                                                                  wicket:id="commentsNumberLeftSideOfTheButton"></span>&nbsp;&nbsp;
+                        <!-- input class="btn btn-default" style="margin: 0 10px;" type="submit" value="Add Reference" disabled/ -->
+                        <div wicket:id="thumbsUpVoting"></div>
+                        &nbsp;&nbsp; <br/> <a id="commentsButtonTop" class="btn btn-primary" wicket:id="commentsButtonTop"
+                                              href="#commentsButton">
+                        <wicket:message
+                                key="add.comments"/>
+                    </a>
+                    </div>
+
+                    <!-- social challenge to solve -->
+                    <div class="span7">
+                        <h4>
+                            <wicket:message key="challenge.definition.label.socialChallenge"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="socialChallenge"></span>
+                        </p>
+                    </div>
+                    <div class="span4 pull-right">
+                        <!-- UN Goals -->
+                        <h5>
+                            <wicket:message key="challenge.definition.label.goal"/>
+                        </h5>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="unGoals"> </span>
+                        </p>
+                        <!-- Challenge Owner -->
+                        <h5>
+                            <wicket:message key="challenge.definition.label.owner"/>
+                        </h5>
+                        <p>
+                            <a href="#" wicket:id="link"><img class="challengeParticipantsImage"
+                                                              src="./img/default-user-profile.png" wicket:id="userPicture"
+                                                              style="max-height: 50px; max-width: 50px;"/></a>&nbsp; <span
+                                class="wordBreakSpan"
+                                wicket:id="nickName"></span>&nbsp;&nbsp; <a href="#" wicket:id="createMessage"
+                                                                            title="Click to send message"><img
+                                style="max-height: 50px;"
+                                src="assets/img/message_image.png"/></a>
+                        </p>
+                        <!-- total no of followers -->
+                        <h5>
+                            <span wicket:id="followersTotalNoLabel"></span>&nbsp;
+                            <wicket:message key="challenge.definition.label.followers"/>
+                        </h5>
+                        <!-- Challenge Contributors -->
+                        <h5>
+                            <wicket:message key="challenge.definition.label.contributor"/>
+                        </h5>
+                        <ul class="thumbnails nav" wicket:id="contributorsContainer">
+                            <li wicket:id="contributors" class="span8" style="margin: 0px !important">
+                                <div style="margin-top: 10px;">
+                                    <a wicket:id="userProfileDetailLink"> <img class="ideaUserImage" wicket:id="con_img"
+                                                                               style="max-height: 45px;"/></a> <span
+                                        class="author wordBreakSpan" wicket:id="con_name"></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="span12 wordBreakSpan pull-right" wicket:id="pagination"></div>
+
+                        <!-- Challenge related doc -->
+                        <h5>
+                            <wicket:message key="challenge.definition.label.docu"/>
+                        </h5>
+                        <ul>
+                            <li wicket:id="attachments"><a class="author" wicket:id="fileLink"><span
+                                    wicket:id="fileLabel"></span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Challenge Beneficiaries-->
+                    <div class="span7">
+                        <h4>
+                            <wicket:message key="challenge.definition.label.beneficiaries"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="beneficiaries"></span>
+                        </p>
+                    </div>
+
+                    <!-- Challenge Potential impact -->
+                    <div class="span7">
+                        <h4>
+                            <wicket:message key="challenge.definition.label.impact"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="potentialImpact"></span>
+                        </p>
+                    </div>
+
+                    <!-- Challenge levelOfSupport -->
+                    <div class="span7">
+                        <h4>
+                            <wicket:message key="challenge.definition.label.support"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="levelOfSupport"></span>
+                        </p>
+                    </div>
+
+                    <!-- Challenge ideasProposed -->
+                    <div class="span7">
+                        <h4>
+                            <wicket:message key="challenge.definition.label.selection"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="ideasProposed"></span>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="span12" style="margin: 0px !important">
+                    <hr style="height: 1px; border: none; color: #333; background-color: #333;"/>
+                    <br/><br/><br/>
+                </div>
+                <blockquote wicket:id="noDiscussion" class="alert fade in">
+                    <i class="icon-warning-sign"></i> <span class="wordBreakSpan" wicket:id="noDiscussionLabel"></span>
+                </blockquote>
+                <div wicket:id="commentsContainer">
+                    <h4>
+                        <span wicket:id="commentsNumberTopOnTheButton"></span>
+                    </h4>
+                    <div id="commentsButton" class="idea-comments" wicket:id="commentsPanel"></div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="span10" wicket:id="createMessageModalWindow"></div>
+    </section>
+</wicket:extend>

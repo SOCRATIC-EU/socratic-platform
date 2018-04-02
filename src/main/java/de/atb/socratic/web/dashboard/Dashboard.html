@@ -1,0 +1,84 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <div class="row">
+        <div class="span12">
+            <section>
+                <div class="dashboardHeaderPanel">
+                    <table class="dashboardHeaderPanelTable">
+                        <tr>
+                            <td rowspan="4"><a href="#" wicket:id="link"><img class="dashboardUserImage"
+                                                                              src="./img/default-user-profile.png"
+                                                                              wicket:id="userPicture"/></a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 style="display: inline;">
+                                    <span wicket:id="nickName"></span>
+                                </h4> <br> <span wicket:id="city"></span><span wicket:id="country"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span wicket:id="votingPanel"></span></td>
+                        </tr>
+                        <tr>
+                            <!-- td><span>Advanced Innovator</span></td -->
+                        </tr>
+                    </table>
+                    <div class="container offset2" style="margin-top: 77px;">
+                        <div id="content">
+                            <ul id="tabs" class="nav nav-tabs">
+                                <li id="dashboardTab">
+                                    <a wicket:id="dashboard">
+                                        <wicket:message key="dashboard.label"/>
+                                    </a>
+                                </li>
+                                <li id="participationTab">
+                                    <a wicket:id="participation">
+                                        <wicket:message key="dashboard.participate.label"/>
+                                    </a>
+                                </li>
+                                <li id="leadTab">
+                                    <a wicket:id="lead">
+                                        <wicket:message key="dashboard.lead.label"/>
+                                    </a>
+                                </li>
+                                <li id="settingsTab">
+                                    <a wicket:id="settings">
+                                        <wicket:message key="dashboard.settings.label"/>
+                                    </a>
+                                </li>
+                                <li id="messagesTab">
+                                    <a wicket:id="messages">
+                                        <wicket:message key="dashboard.messages.label"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="span12" style="margin: 0px !important;">
+                    <wicket:child/>
+                </div>
+            </section>
+        </div>
+    </div>
+</wicket:extend>

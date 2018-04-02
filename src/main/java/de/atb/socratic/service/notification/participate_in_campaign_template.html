@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'open sans', 'droid sans', sans-serif;
+            color: rgb(90, 90, 90);
+            font-size: .9em;
+        }
+
+        a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+
+        td {
+            padding-bottom: 1em;
+            padding-top: 1em;
+        }
+
+        td.campaignDescription {
+            padding-left: .5em;
+            padding-right: .5em;
+            background-color: #fafafa;
+            border: 1px solid #0088cc;
+        }
+
+        td.footer {
+            padding: .5em;
+            border-top: 1px solid #dfdfdf;
+            background-color: #fcfcfc
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            Dear <strong>$FULLNAME</strong>,<br/>
+            you are invited to particpiate in the following campaign:
+        </td>
+    </tr>
+    <tr>
+        <td class="campaignDescription">
+            <h2><a href="$CAMPAIGN_LINK">$CAMPAIGN_NAME</a></h2>
+            <p>$CAMPAIGN_DESCRIPTION</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>You can take part and share your ideas, by clicking on the following link (or copy paste the link into your
+                browser's address bar).<br/>
+                <em><a href="$CAMPAIGN_LINK">Participate in &quot;$CAMPAIGN_NAME&quot;</a></em></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p style="vertical-align: text-bottom"><img src="$EFF_LOGO" style="vertical-align: baseline;"/>&nbsp; Sincerely, the
+                SOCRATIC team</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="footer">
+            <p>
+                <small><i>To make sure our emails are delivered to your inbox, please add socratic-platform@atb-bremen.de to
+                    your address book.</i><br/>
+                    You are receiving this email because someone registered <a href="mailto:$EMAIL">$EMAIL</a> at the <a
+                            href="$HOMEPAGE_LINK">SOCRATIC</a> platform. Please do not reply directly to this email.
+                </small>
+            </p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

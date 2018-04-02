@@ -1,0 +1,98 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <style>
+        .image {
+            width: 60%;
+            margin: auto;
+            display: table;
+        }
+
+        .table-overall tr {
+            border: 1px solid #8C8C8C;
+        }
+
+        .table-overall tr td {
+            padding: 8px;
+            border-left: 1px solid #8C8C8C;
+        }
+
+        .imp-cell {
+            color: #000;
+            border: 1px solid #B2BA05 !important;
+            font-weight: bold;
+            background-color: #F9F9F9;
+        }
+
+        ul li.lc-item {
+            list-style-type: none;
+            padding: 20px 0px;
+            font-size: larger;
+        }
+
+        td > ul {
+            margin-top: 10px;
+        }
+
+        .page-header {
+            padding-top: 10px;
+        }
+
+        section {
+            margin-bottom: -30px;
+        }
+
+        section:last-child {
+            margin-bottom: 30px;
+        }
+    </style>
+    <section>
+        <!-- header -->
+        <div class="page-header">
+            <h2>
+                <wicket:message key="page.header"></wicket:message>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="span3 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="70">
+                    <li class="" wicket:id="presentation"><a href="#presentation"> <i class="icon-chevron-right"></i>Presentation
+                    </a></li>
+                    <li class="" wicket:id="defineChallenge"><a href="#defineChallenge"> <i class="icon-chevron-right"></i>Defining
+                        a challenge
+                    </a></li>
+                    <li class="" wicket:id="developIdeas"><a href="#developIdeas"> <i class="icon-chevron-right"></i>Developing
+                        ideas
+                    </a></li>
+                    <li class="" wicket:id="ideasToAction"><a href="#ideasToAction"> <i class="icon-chevron-right"></i>From
+                        ideas to projects
+                    </a></li>
+                    <li class="" wicket:id="creatingImpact"><a href="#creatingImpact"> <i class="icon-chevron-right"></i>Creating
+                        Impact
+                    </a></li>
+                </ul>
+            </div>
+            <div class="span9">
+                <wicket:child/>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

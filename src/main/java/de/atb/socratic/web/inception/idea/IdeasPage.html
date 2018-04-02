@@ -1,0 +1,100 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section>
+        <div class="" wicket:id="commonHeaderPanel"></div>
+    </section>
+    <section class="spanSection span12">
+        <div class="row-fluid span table">
+            <div class="row-fluid span10 offset1">
+                <div class="span12 offset1">
+                    <!-- header -->
+                    <h2>
+                        <wicket:message key="challenge.ideation.label.head"/>
+                    </h2>
+                    <div>
+                        <span class="span7 wordBreakSpan" wicket:id="noOfDays"></span> <span class="span8 wordBreakSpan"
+                                                                                             style="font-size: medium; margin: 0px !important"> <wicket:message
+                            key="challenge.ideation.label.info"/></span>
+                        <div class="span6" style="margin-top: 15px; margin-left: 0px !important; font-size: medium;">
+                            <a class="btn btn-default offset1" href="#" wicket:id="linkToDefinition">
+                                <wicket:message
+                                        key="challenge.definition.link"/>
+                            </a> &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#" wicket:id="ideationGuidelines">
+                                <wicket:message key="ideation.guidelines.link.label"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span11">
+                <hr style="height: 1px; border: none; color: #333; background-color: #333;"/>
+                <div class="row-fluid span">
+                    <div class="span2">
+                        <h4>
+                            <span wicket:id="noOfIdeas"></span>&nbsp;
+                            <span wicket:id="noOfIdeasLabel"></span>
+                        </h4>
+                    </div>
+                    <div class="span8">
+                        <div class="accordion pull-right" id="ideaSorting">
+                            <form class="form-inline" wicket:id="sortingCriteriaForm">
+                                <span class="form-inline"><wicket:message key="sort.text"/></span>&nbsp;&nbsp;
+                                <select class="form-inline" wicket:id="sortingCriteriaChoice"></select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="span2 pull-right">
+                        <a class="btn btn-primary pull-right" wicket:id="addIdeaLinkTop" id="add-wizardTop">
+                            <wicket:message key="create.idea.button"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="span11">
+                <!--List Ideas in Dataview -->
+                <div wicket:id="ideaList"></div>
+                <hr>
+                <a class="btn btn-primary pull-right" wicket:id="addIdeaLinkBottom" id="add-wizardBottom">
+                    <wicket:message key="create.idea.button"/>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <wicket:fragment wicket:id="ideaFormFragment">
+        <div class="row-fluid idea-form collapse">
+            <div class="span10">
+                <div wicket:id="ideaFormPanel"></div>
+            </div>
+        </div>
+        <div class="row-fluid idea-form collapse in">
+            <div class="span10">
+                <button class="btn btn-primary" data-toggle="collapse" data-target=".idea-form" wicket:id="showIdeaFormLink">
+                    <span wicket:id="showIdeaLabel"></span>
+                </button>
+            </div>
+        </div>
+        <br>
+    </wicket:fragment>
+    <wicket:fragment wicket:id="emptyFragment"></wicket:fragment>
+</wicket:extend>

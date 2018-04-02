@@ -1,0 +1,64 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section class="span12 spanSection" id="settings">
+        <div style="margin-left: 30%;">
+            <h3>
+                <span><wicket:message key="default.settings.header"/></span>
+            </h3>
+        </div>
+        <ul style="margin-left: 30%; list-style: none">
+            <li>
+                <a wicket:id="editUserLink" class="dashboardSettingsLink">
+                    <wicket:message key="default.settings.setProfile"/>
+                </a>
+            </li>
+            <li>
+                <a wicket:id="changePasswordLink" class="dashboardSettingsLink">
+                    <wicket:message key="default.settings.changePasswords"/>
+                </a>
+            </li>
+            <li>
+                <a wicket:id="manageNotificationsLink" class="dashboardSettingsLink">
+                    <wicket:message key="default.settings.manageNotifications"/>
+                </a>
+            </li>
+            <li>
+                <a wicket:id="invitationLink" class="dashboardSettingsLink">
+                    <wicket:message key="default.settings.invitationLink"/>
+                </a>
+            </li>
+            <li>
+                <div wicket:id="inviteFBFriends" class="dashboardSettingsLink"></div>
+            </li>
+            <li>
+                <div style="margin-top: -30px; margin-left: -5px;" wicket:id="inviteOnLinkedIn"
+                     class="dashboardSettingsLink"></div>
+            </li>
+            <li>
+                <a wicket:id="deleteUserProfileLink" class="dashboardSettingsLink">
+                    <wicket:message key="default.settings.deleteAccount"/>
+                </a>
+            </li>
+        </ul>
+        <div wicket:id="selectIdeaNotificationModal"></div>
+    </section>
+</wicket:extend>

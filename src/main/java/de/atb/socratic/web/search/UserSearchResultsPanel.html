@@ -1,0 +1,105 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <div wicket:id="usersContainer">
+        <div class="navigator right" wicket:id="navigatorHead"></div>
+        <table class="table table-striped tablesorter" id="user-list">
+            <tbody>
+            <tr wicket:id="users">
+                <td style="margin-top: 20px;" width="25%">
+                    <a href="#" wicket:id="link"><img src="./img/default-user-profile.png" wicket:id="userPicture"
+                                                      style="border-radius: 50%; max-height: 80px; max-width: 80px;"/></a>&nbsp;&nbsp;&nbsp;<span
+                        wicket:id="nickName"></span>
+                </td>
+                <td class="well" width="40%">
+                    <div style="margin-left: 20px; display: inline-block;">
+                            <span>
+                                <i class="icon-file" style="font-size: x-large"></i><br>
+                                <span wicket:id="leadLabel"></span><br>
+                                <span>leads</span>
+                            </span>
+                    </div>
+                    <div style="margin-left: 20px; display: inline-block;">
+                            <span>
+                                <i class="icon-lightbulb" style="font-size: x-large"></i><br>
+                                <span wicket:id="ideasLabel"></span><br>
+                                <span>ideas</span>
+                            </span>
+                    </div>
+                    <div style="margin-left: 20px; display: inline-block;">
+                            <span>
+                                <img style="height: 20px;" src="assets/img/contributions_icon.png"/><br>
+                                <span wicket:id="contributionsLabel"></span><br>
+                                <span>contributions</span>
+                            </span>
+                    </div>
+                    <div style="margin-left: 20px; display: inline-block;">
+                            <span>
+                                <i class="icon-thumbs-up" style="font-size: x-large"></i><br>
+                                <span wicket:id="likesLabel"></span><br>
+                                <span>likes received</span>
+                            </span>
+                    </div>
+                </td>
+                <td width="35%">
+                    <div>
+                        <strong>
+                            <wicket:message key="skills.title.text"/>
+                        </strong><br>
+                        <div class="details" wicket:id="skillsContainer">
+                            <div class="pull-left">
+                                <i class="icon-tags"></i>&nbsp;
+                            </div>
+                            <div class="tags-display">
+                                <small><span class="tag wordBreakSpan" wicket:id="skills"> <span
+                                        wicket:id="skill">[skill]</span>
+                                    </span></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <strong>
+                            <wicket:message key="interests.title.text"/>
+                        </strong><br>
+                        <div class="details" wicket:id="interestsContainer">
+                            <div class="pull-left">
+                                <i class="icon-tags"></i>&nbsp;
+                            </div>
+                            <div class="tags-display">
+                                <small><span class="tag wordBreakSpan" wicket:id="interests"> <span
+                                        wicket:id="interest">[interest]</span>
+                                    </span></small>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5" class="navigator right">
+                    <div wicket:id="navigatorFoot"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</wicket:panel>

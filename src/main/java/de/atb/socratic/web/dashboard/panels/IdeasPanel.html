@@ -1,0 +1,50 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <div class="">
+        <h4 class="idea-title-new" style="min-height: 50px;" wicket:id="headline">
+            <span class="wordBreakSpan" wicket:id="shortText"></span>
+        </h4>
+        <div class="idea-title-new" style="min-height: 50px;">
+            <span class="wordBreakSpan" wicket:id="challengeName"></span><br>
+        </div>
+        <br>
+        <table class="table">
+            <tr>
+                <td><img class="challengeCretorImage" wicket:id="profilePicture"/></td>
+                <td><span class="author" id="refOwner" wicket:id="postedBy.nickName"></span><br> <span class="author"
+                                                                                                       id="refOwner"
+                                                                                                       wicket:id="postedBy.city"></span>&nbsp;
+                    <span class="author" id="refOwner"
+                          wicket:id="postedBy.country"></span></td>
+                <td width="20%" style="border-left: 1px outset;"><img src="assets/img/users.png"/></td>
+                <td><span wicket:id="contributors"></span><br>
+                    <wicket:message key="ideas.contributors.text"/>
+                </td>
+            </tr>
+        </table>
+        <div class="span12" wicket:id="container">
+            <span wicket:id="helpText"></span><br> <a class="btn btn-danger" style="margin-left: 120px;"
+                                                      wicket:id="exploreOrManageButton"><span
+                wicket:id="buttonLabel"></span></a>
+        </div>
+    </div>
+</wicket:panel>

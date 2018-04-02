@@ -1,0 +1,37 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <div>
+        <div class="span12">
+            <ul class="thumbnails" wicket:id="ideasContainer">
+                <li class="span4 thumbnailsIdeaMargin" style="border: solid 1px; min-height: 515px;" wicket:id="ideasRepeater">
+                    <img
+                            wicket:id="profilePicturePreview" style="width: 400px; height: 200px;">
+                    <div style="padding: 10px">
+                        <span wicket:id="ideaAnchorMan"></span>
+                        <div wicket:id="ideaPanel"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div wicket:id="pagination"></div>
+    </div>
+</wicket:panel>

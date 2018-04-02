@@ -1,0 +1,181 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section class="spanSection span12">
+        <div class="offset2 span10">
+            <div class="span7">
+                <div class="span2" style="margin: 0px !important">
+                    <img class="" src="./img/default-user-profile.png" wicket:id="profilePicture"/>
+                </div>
+                <div class="span3">
+                    <h3>
+                        <span class="wordBreakSpan" wicket:id="nickName"></span>
+                    </h3>
+                    <span wicket:id="city"></span>&nbsp;<span wicket:id="country"></span>
+                </div>
+            </div>
+            <div class="span7" style="margin-top: 2%;">
+                <div class="span2">
+                    <a class="btn btn-primary" href="#" wicket:id="createMessage" title="Click to send message">
+                        <wicket:message
+                                key="send.message"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="span5 well offset" style="margin-top: 2%;">
+                <div class="span1">
+                    <span>
+                        <i class="icon-file" style="font-size: x-large"></i><br>
+                        <span wicket:id="leadLabel"></span><br>
+                        <span>leads</span>
+                    </span>
+                </div>
+                <div class="span1">
+                    <span>
+                        <i class="icon-lightbulb" style="font-size: x-large"></i><br>
+                        <span wicket:id="ideasLabel"></span><br>
+                        <span>ideas</span>
+                    </span>
+                </div>
+                <div class="span1">
+                    <span>
+                        <img style="height: 20px; margin-top: 5%;" src="assets/img/contributions_icon.png"/><br>
+                        <span wicket:id="contributionsLabel"></span><br>
+                        <span>contributions</span>
+                    </span>
+                </div>
+                <div class="span1">
+                    <span>
+                        <i class="icon-thumbs-up" style="font-size: x-large"></i><br>
+                        <span wicket:id="likesLabel"></span><br>
+                        <span>likes received</span>
+                    </span>
+                </div>
+            </div>
+            <div class="span7">
+                <div class="span1">
+                    <wicket:message key="birthDate.label"/>
+                </div>
+                <div class="span4">
+                    <span class="wordBreakSpan" wicket:id="birthDate"></span>
+                </div>
+            </div>
+            <div class="span7" style="margin-top: 2%;">
+                <div class="span1">
+                    <wicket:message key="website.label"/>
+                </div>
+                <div class="span5">
+                    <a wicket:id="website"></a>
+                </div>
+            </div>
+            <div class="span7" style="margin-top: 2%;">
+                <div class="span1">
+                    <wicket:message key="socialNetwork.lebel"/>
+                </div>
+                <div class="span5">
+                    <a wicket:id="facebookUrl"><img style="height: 30px; width: 30px;" src="assets/img/facebook-logo.jpg"/></a>&nbsp;
+                    <a wicket:id="linkedInUrl"><img style="height: 30px; width: 30px;" src="assets/img/linkedIn_logo.png"/></a>&nbsp;
+                    <a wicket:id="twitterUrl"><img style="height: 30px; width: 30px;" src="assets/img/twittee_logo.jpg"/></a>
+                </div>
+            </div>
+            <div class="span7" style="margin-top: 2%;">
+                <div class="span1">
+                    <wicket:message key="user.interests.label"/>
+                </div>
+                <div class="span5">
+                    <div class="details" wicket:id="interestsContainer">
+                        <div class="tags-display">
+                            <small><span class="tag wordBreakSpan" wicket:id="interests"> <span
+                                    wicket:id="interest">[interest]</span>
+                            </span></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span7" style="margin-top: 2%;">
+                <div class="span1">
+                    <wicket:message key="user.skills.label"/>
+                </div>
+                <div class="span5">
+                    <div class="details" wicket:id="skillsContainer">
+                        <div class="tags-display">
+                            <small><span class="tag wordBreakSpan" wicket:id="skills"> <span
+                                    wicket:id="skill">[skill]</span>
+                            </span></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="span12" style="margin: 0px !important">
+            <hr class="span11">
+            <h3>
+                <wicket:message key="user.lead.header.label"></wicket:message>
+            </h3>
+            <div class="span4" style="margin: 5px !important">
+                <h4 style="margin-left: 150px;">
+                    <wicket:message key="user.lead.challenge.header.label"></wicket:message>
+                </h4>
+                <div wicket:id="userLeadChallengesListPanel"></div>
+            </div>
+            <div class="span4" style="margin: 5px !important">
+                <h4 style="margin-left: 150px;">
+                    <wicket:message key="user.lead.idea.header.label"></wicket:message>
+                </h4>
+                <div wicket:id="userLeadIdeasListPanel"></div>
+            </div>
+            <div class="span4" style="margin: 5px !important">
+                <h4 style="margin-left: 150px;">
+                    <wicket:message key="user.lead.action.header.label"></wicket:message>
+                </h4>
+                <div wicket:id="userLeadActionsListPanel"></div>
+            </div>
+            <hr>
+        </div>
+        <div class="span12" style="margin: 0px !important">
+            <hr class="span11">
+            <h3 class="span11" style="margin: 0px !important">
+                <wicket:message key="user.participation.header.label"></wicket:message>
+            </h3>
+            <div class="span4" style="margin: 5px !important">
+                <h4 style="margin-left: 150px;">
+                    <wicket:message key="user.participation.challenge.header.label"></wicket:message>
+                </h4>
+                <div wicket:id="userParticipateChallengesListPanel"></div>
+            </div>
+            <div class="span4" style="margin: 5px !important">
+                <h4 style="margin-left: 150px;">
+                    <wicket:message key="user.participation.idea.header.label"></wicket:message>
+                </h4>
+                <div wicket:id="userParticipateIdeasListPanel"></div>
+            </div>
+            <div class="span4" style="margin: 5px !important">
+                <h4 style="margin-left: 150px;">
+                    <wicket:message key="user.participation.action.header.label"></wicket:message>
+                </h4>
+                <div wicket:id="userParticipateActionsListPanel"></div>
+            </div>
+        </div>
+        <div class="span10" wicket:id="createMessageModalWindow"></div>
+    </section>
+</wicket:extend>

@@ -1,0 +1,87 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <style>
+        .bs-action-sidenav {
+            width: 180px;
+            margin: 30px 0 0;
+            padding: 0;
+            background-color: #fff;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+            -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+        }
+
+        .bs-action-sidenav > li > a {
+            display: block;
+            width: 170px \9;
+            margin: 0 0 -1px;
+            padding: 8px 14px;
+            border: 1px solid #e5e5e5;
+        }
+    </style>
+    <section>
+        <a wicket:id="back">
+            <wicket:message key="back.text"/>
+        </a><br><br>
+        <!-- header -->
+        <div class="spanSection span12">
+            <span class="span6 wordBreakSpan" style="font-size: large" wicket:id="shortText"></span> <a
+                class="btn btn-primary pull-right" wicket:id="exploreLink" id="add-wizard">
+            <wicket:message
+                    key="action.exploreLink"/>
+        </a>
+        </div>
+        <div class="container">
+            <div class="span2 bs-docs-sidebar" style="margin: 0px !important; overflow: hidden;">
+                <ul id="sideTabs" class="nav nav-list bs-action-sidenav">
+                    <li id="recentActivityTab"><a wicket:id="recentActivity">
+                        <wicket:message key="activity.text"/>
+                    </a></li>
+                    <li id="statusTab"><a wicket:id="status">
+                        <wicket:message key="callToAction.text"/>
+                    </a></li>
+                    <li id="teamTab"><a wicket:id="team">
+                        <wicket:message key="team.text"/>
+                    </a></li>
+                    <li id="participantsTab"><a wicket:id="participants">
+                        <wicket:message key="participants.text"/>
+                    </a></li>
+                    <li id="editActionSolutionTab"><a wicket:id="editActionSolution">
+                        <wicket:message key="editSolution.text"/>
+                    </a></li>
+                    <li id="iterationsTab"><a wicket:id="iterations">
+                        <wicket:message key="iterations.text"/>
+                    </a></li>
+                    <li id="businessModelTab"><a wicket:id="businessModel">
+                        <wicket:message key="businessModel.text"/>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="span10 tab-content" style="margin: 0px !important; overflow: hidden;">
+                <wicket:child/>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

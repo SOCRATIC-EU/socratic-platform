@@ -1,0 +1,66 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <div class="container">
+        <ul class="thumbnails" wicket:id="actionsContainer">
+            <li class="thumbnail span11" wicket:id="actions">
+                <div class="span3" style="margin: 0px !important">
+                    <img style="width: 240px; height: 200px;" wicket:id="profilePicturePreview">
+                </div>
+                <div class="span5" style="margin: 0px !important">
+                    <div style="min-height: 150px; margin-left: 10px;">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="shortText"></span>
+                        </h4>
+                        <span class="wordBreakSpan" wicket:id="elevatorPitch"></span><br>
+                    </div>
+                    <div style="display: inline-block;">
+                        <img style="max-width: 40px; max-height: 40px; border-radius: 50%;" wicket:id="userPicture"/> <span
+                            class="author" style="color: #2C9CA6" wicket:id="postedBy.nickName"></span>
+                    </div>
+                    <div style="display: inline-block; margin-left: 15px;">
+                        <img style="max-width: 40px; max-height: 40px;" src="assets/img/users.png"/> <span
+                            wicket:id="contributors"></span>
+                        <wicket:message key="action.contributors.text"/>
+                    </div>
+                    <div style="display: inline-block; margin-left: 15px;">
+                        <i class="icon-comment icon-2x"></i>&nbsp; <span wicket:id="actionCommentLabel"
+                                                                         style="font-size: medium;"></span> &nbsp; <i
+                            class="icon-thumbs-up icon-2x"></i>&nbsp; <span
+                            wicket:id="thumbsUpVotes" style="font-size: medium;"></span>
+                    </div>
+                </div>
+                <div class="well span3" style="margin: 0px !important">
+                    <div style="min-height: 130px; overflow: visible;">
+                        <span class="wordBreakSpan" wicket:id="callToAction"></span>
+                    </div>
+                    <div style="margin-left: 25%;">
+                        <a class="btn btn-primary" wicket:id="exploreActionLink" id="add-wizardTop">
+                            <wicket:message
+                                    key="action.explore.button"/>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div wicket:id="pagination" class="pull-right"></div>
+</wicket:panel>

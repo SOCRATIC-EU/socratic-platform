@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="false">
+
+    <display-name>${context.path}</display-name>
+
+    <session-config>
+        <session-timeout>300</session-timeout>
+    </session-config>
+
+    <filter>
+        <filter-name>wicket</filter-name>
+        <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+        <init-param>
+            <param-name>applicationClassName</param-name>
+            <param-value>de.atb.socratic.web.WicketApplication</param-value>
+        </init-param>
+        <init-param>
+            <param-name>configuration</param-name>
+            <param-value>${configuration.mode}</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>wicket</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+    <!-- The OAuth Servlet handles token exchange -->
+    <servlet>
+        <servlet-name>OAuth</servlet-name>
+        <servlet-class>org.jboss.resteasy.auth.oauth.OAuthServlet</servlet-class>
+    </servlet>
+
+    <context-param>
+        <param-name>oauth.provider.provider-class</param-name>
+        <!--FIXME: does this class still exist anywhere? is it still used?-->
+        <param-value>de.atb.socratic.service.security.OAuthProvider</param-value>
+    </context-param>
+    <!-- This will be the base for the token exchange endpoint URL -->
+    <servlet-mapping>
+        <servlet-name>OAuth</servlet-name>
+        <url-pattern>/oauth/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>health</servlet-name>
+        <jsp-file>/health.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>health</servlet-name>
+        <url-pattern>/health</url-pattern>
+    </servlet-mapping>
+
+    <!-- 404 page not found error -->
+    <error-page>
+        <error-code>404</error-code>
+        <!--FIXME: this produces an error message in IntelliJ-->
+        <location>/error404</location>
+    </error-page>
+
+</web-app>
+

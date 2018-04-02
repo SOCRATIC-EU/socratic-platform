@@ -1,0 +1,11 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+##### Windows
+*.bat text eol=crlf
+*.exe binary
+*.dll binary
+
+##### Linux
+*.sh text eol=lf
+*.so binary

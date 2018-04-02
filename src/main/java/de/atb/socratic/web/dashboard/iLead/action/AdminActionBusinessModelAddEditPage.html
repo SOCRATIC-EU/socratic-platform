@@ -1,0 +1,229 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <link href="assets/css/popUp.css" rel="stylesheet">
+    <script>
+        window.onload = function () {
+            document.getElementById('button').onclick = function () {
+                document.getElementById('modal').style.display = "none"
+            };
+        };
+    </script>
+    <section class="span8" id="businessModel">
+        <div id="modal" wicket:id="popupContainer">
+            <div class="modalconent">
+                <h2 style="margin-top: 20px;">
+                    <span wicket:id="popupHeader"></span>
+                </h2>
+                <p>
+                    <span wicket:id="popupPara1"></span>
+                </p>
+                <ul>
+                    <li><span wicket:id="popupList1"></span></li>
+                    <li><span wicket:id="popupList2"></span></li>
+                </ul>
+                <p>
+                    <span wicket:id="popupPara2"></span>
+                </p>
+                <button id="button">
+                    <wicket:message key="popup.model.window.close"/>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span">
+                <form wicket:id="form">
+
+                    <div class="page-header">
+                        <h2 style="display: inline;">
+                            <span wicket:id="header"></span>
+                        </h2>
+                        <div class="pull-right">
+                            <input type="submit" class="btn btn-info pull-right" wicket:message="value:submit.text"
+                                   wicket:id="submitTop"/> <br>
+                        </div>
+                    </div>
+                    <fieldset class="span8">
+                        <div class="control-group span10">
+                            <div class="span6" style="margin: 0px !important">
+                                <p class="firstPara">
+                                    <wicket:message key="businessModel.desc.one"/>
+                                    <br> <br>
+                                </p>
+                                <p class="restPara">
+                                    <wicket:message key="businessModel.desc.two"/>
+                                    <br> <br>
+                                    <wicket:message key="businessModel.desc.three"/>
+                                    <br> <br>
+                                    <wicket:message key="businessModel.desc.four"/>
+                                    <br> <br> <a
+                                        href="https://strategyzer.com/training/courses/mastering-business-models">https://strategyzer.com/training/courses/mastering-business-models</a>
+                                </p>
+                                <a id="show">
+                                    <wicket:message key="businessModel.desc.readMore"/>
+                                </a>&#47;&nbsp;<a id="hide">
+                                <wicket:message
+                                        key="businessModel.desc.less"/>
+                            </a> <br> <br>
+                            </div>
+                            <div class="span6" style="margin: 0px !important">
+                                <img style="height: auto;" src="assets/img/businessModel_canvas.png"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <br>
+                            <div>
+                                <h4>
+                                    <wicket:message key="valuePropositions.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="valuePropositionsValidationBorder">
+                                        <textarea type="text" rows="3" class="input-xxlarge"
+                                                  wicket:id="valuePropositions"></textarea>
+                                        <span class="help-inline" wicket:id="valuePropositionsHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="customerSegments.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="customerSegmentsValidationBorder">
+                                        <textarea type="text" rows="3" class="input-xxlarge"
+                                                  wicket:id="customerSegments"></textarea>
+                                        <span class="help-inline" wicket:id="customerSegmentsHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="customerRelationships.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="customerRelationshipsValidationBorder">
+                                        <textarea type="text" rows="3" class="input-xxlarge"
+                                                  wicket:id="customerRelationships"></textarea>
+                                        <span class="form-inline" wicket:id="customerRelationshipsHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="channels.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="channelsValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge" wicket:id="channels"></textarea>
+                                        <span class="help-inline" wicket:id="channelsHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="keyPartners.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="keyPartnersValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge" wicket:id="keyPartners"></textarea>
+                                        <span class="help-inline" wicket:id="keyPartnersHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="keyActivities.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="keyActivitiesValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="keyActivities"></textarea>
+                                        <span class="help-inline" wicket:id="keyActivitiesHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="keyResources.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="keyResourcesValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="keyResources"></textarea>
+                                        <span class="help-inline" wicket:id="keyResourcesHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="revenueStream.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="revenueStreamValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="revenueStream"></textarea>
+                                        <span class="help-inline" wicket:id="revenueStreamHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>
+                                    <wicket:message key="costStructure.input.label"/>
+                                </h4>
+                                <div class="control-group">
+                                    <div class="controls" wicket:id="costStructureValidationBorder">
+                                        <textarea type="text" rows="6" class="input-xxlarge"
+                                                  wicket:id="costStructure"></textarea>
+                                        <span class="help-inline" wicket:id="costStructureHelpText"> <i
+                                                class="icon-2x icon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input style="float: right" type="submit" class="btn btn-info"
+                                           wicket:message="value:submit.text" wicket:id="submitBottom"/>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+</wicket:extend>

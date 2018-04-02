@@ -1,0 +1,897 @@
+/*-
+ * #%L
+ * socratic-platform
+ * %%
+ * Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * #L%
+ */
+/******************************************************************************/
+/* Basic stuff																		  */
+/******************************************************************************/
+body {
+    font-family: open sans, droid sans, sans-serif;
+    font-size: 0.85em;
+    color: rgb(35, 63, 94);
+    background-color: rgb(242, 242, 242);
+}
+
+h1, h2 {
+    color: rgb(35, 63, 94);
+}
+
+h4.common-header-title {
+    font-size: 32px;
+    line-height: 36px;
+}
+
+h4.idea-title {
+}
+
+h4.idea-title-new {
+    margin-top: 0px;
+    font-size: 14px;
+}
+
+/******************************************************************************/
+/* OVERWRITE Bootstrap btn-primary button style with SOCRATIC colors         */
+/******************************************************************************/
+.btn-primary.active {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.btn {
+    border-color: #c5c5c5;
+    border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: rgba(22, 155, 213, 1);
+    *background-color: rgba(22, 155, 213, 1);
+    background-image: -moz-linear-gradient(top, rgba(22, 155, 213, 1), rgba(22, 155, 213, 1));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(22, 155, 213, 1)), to(rgba(22, 155, 213, 1)));
+    background-image: -webkit-linear-gradient(top, rgba(22, 155, 213, 1), rgba(22, 155, 213, 1));
+    background-image: -o-linear-gradient(top, rgba(22, 155, 213, 1), rgba(22, 155, 213, 1));
+    background-image: linear-gradient(to bottom, rgba(22, 155, 213, 1), rgba(22, 155, 213, 1));
+    background-repeat: repeat-x;
+    border-color: rgba(22, 155, 213, 1) rgba(22, 155, 213, 1) rgba(22, 155, 213, 1);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+    color: #ffffff;
+    background-color: rgba(22, 155, 213, 1);
+    *background-color: rgba(22, 155, 213, 1);
+}
+
+.btn-primary:active,
+.btn-primary.active {
+    background-color: rgba(22, 155, 213, 1) \9;
+}
+
+blockquote.idea-description {
+    margin-top: 5px;
+}
+
+.word-break {
+    word-wrap: break-word;
+}
+
+.page-header {
+    border-bottom: 1px solid rgb(200, 143, 186);
+    margin: 0 0 5px 0;
+}
+
+.table thead th, .table th {
+    color: #000;
+    border-bottom: 1px solid rgb(200, 143, 186);
+}
+
+.table thead th label {
+    display: inline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div.datepicker {
+    /*position: fixed;*/
+    z-index: 2050;
+}
+
+table.campaigns td.actions .btn-small, table.campaigns td.actions .btn-small.disabled {
+    font-size: 15px;
+}
+
+table.campaigns tr.campaign .details {
+    font-size: 12px;
+}
+
+table.campaigns tr.campaign .details .author, table.campaigns tr.campaign .details .dueDate {
+    padding-right: 10px;
+    font-style: italic;
+}
+
+/******************************************************************************/
+/* adjust navbar size and navbar dropdown caret margin for eff logo			  */
+/******************************************************************************/
+.navbar .nav > li {
+    float: left;
+    line-height: 32px;
+}
+
+.navbar-form {
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+.navbar .dropdown-menu li a.active {
+    font-weight: bold;
+}
+
+.dropdown-menu li.divider a:hover {
+    background: none;
+}
+
+input.search-query {
+    border-radius: 5px !important;
+}
+
+/******************************************************************************/
+/* adjust navbar for notifications		  									  */
+/******************************************************************************/
+.navbar .nav .dropdown-toggle .caret {
+    margin-top: 14px;
+    border-top-color: #777777;
+    border-bottom-color: #777777;
+}
+
+.navbar .nav > li > div.dropdown > a {
+    float: none;
+    padding: 10px 15px 10px;
+    color: #777777;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #ffffff;
+}
+
+.nav > li > div.dropdown > a {
+    display: block;
+}
+
+.navbar .pull-right > li > div > .dropdown-menu, .navbar .nav > li > div > .dropdown-menu.pull-right {
+    right: 0;
+    left: auto;
+}
+
+.navbar .nav li .dropdown.open > .dropdown-toggle, .navbar .nav li .dropdown.active > .dropdown-toggle, .navbar .nav li .dropdown.open.active > .dropdown-toggle {
+    color: #555555;
+    background-color: #e5e5e5;
+}
+
+.navbar .nav > li > div > .dropdown-menu:after {
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #ffffff;
+    border-left: 6px solid transparent;
+    content: '';
+}
+
+.navbar .nav > li > div > .dropdown-menu:before {
+    position: absolute;
+    top: -7px;
+    left: 9px;
+    display: inline-block;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-left: 7px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+}
+
+.navbar .pull-right > li > div > .dropdown-menu:after, .navbar .nav > li > div > .dropdown-menu.pull-right:after {
+    right: 13px;
+    left: auto;
+}
+
+.navbar .pull-right > li > div > .dropdown-menu:before, .navbar .nav > li > div > .dropdown-menu.pull-right:before {
+    right: 12px;
+    left: auto;
+}
+
+.navbar .dropdown-menu a.notification {
+    padding: 0px !important;
+    margin: 6px !important;
+    border-bottom: 1px solid #efefef;
+}
+
+.navbar .dropdown-menu a.notification:hover {
+    background-color: transparent;
+    background-image: none;
+    color: #333;
+}
+
+.navbar .dropdown-menu div.notification {
+    font-size: 12px;
+    max-width: 300px;
+    min-width: 300px;
+    width: 300px;
+    white-space: normal;
+    margin: 8px;
+}
+
+.navbar .dropdown-menu a.notification:hover div.notification p.icon {
+    color: rgb(21, 141, 191);
+}
+
+.navbar .dropdown-menu li:last-child a.notification {
+    border-bottom: none;
+}
+
+.navbar .dropdown-menu div.notification .wrapper {
+    overflow: hidden;
+}
+
+.navbar .dropdown-menu div.notification p {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .dropdown-menu div.notification p.icon {
+    float: left;
+    width: 10%;
+    color: #ccc;
+    font-size: 190%;
+    padding-top: 4px;
+}
+
+.navbar .dropdown-menu div.notification p.icon i[class^="icon-"], .navbar .dropdown-menu div.notification p.icon i[class*=" icon-"] {
+    vertical-align: middle;
+}
+
+.navbar .dropdown-menu div.notification p.description {
+    float: right;
+    width: 90%;
+    line-height: 18px;
+}
+
+.navbar .dropdown-menu div.notification .goto {
+    font-size: 85%;
+    text-align: right;
+    clear: both;
+    background-color: #fafafa;
+    padding: 2px;
+    padding-right: 4px;
+    margin-top: 6px;
+    border-bottom: 2px solid #ededed;
+}
+
+.navbar .dropdown-menu div.notification .goto .date {
+    float: left;
+}
+
+.navbar .dropdown-menu a.notification:hover div.notification .goto {
+    background-color: rgba(22, 155, 213, 1);
+    color: #ffffff;
+    background-image: linear-gradient(to bottom, rgb(1, 174, 242), rgba(22, 155, 213, 1));
+}
+
+.navbar .dropdown-menu div.notification .goto i[class^="icon-"], .navbar .dropdown-menu div.notification .goto i[class*=" icon-"] {
+    font-size: 13px;
+}
+
+.navbar .dropdown-menu div.notification .campaign.name {
+    font-style: italic;
+}
+
+.navbar .dropdown-menu div.notification .campaign.creator {
+    font-weight: bold;
+}
+
+/******************************************************************************/
+/* increase max-size of bootstrap modal body								  */
+/******************************************************************************/
+.modal-body {
+    max-height: 600px;
+}
+
+/******************************************************************************/
+/* no list style for Wicket feedback messages 								  */
+/******************************************************************************/
+ul.feedbackPanel {
+    list-style: none;
+    margin-left: 0px;
+}
+
+ul.styledFeedbackPanel {
+    list-style: none;
+}
+
+/******************************************************************************/
+/* adjust colors for Wicket feedback messages 								  */
+/******************************************************************************/
+li.feedbackPanelERROR {
+    color: rgb(227, 50, 56);
+}
+
+li.feedbackPanelWARN {
+    color: rgb(250, 190, 92);
+}
+
+li.feedbackPanelSUCCESS {
+    color: rgb(49, 159, 72);
+}
+
+/******************************************************************************/
+/* fix label colors in control-groups used in InputValidationBorder			  */
+/******************************************************************************/
+.control-group.error label {
+    color: rgb(227, 50, 56);
+}
+
+.control-group.warning label {
+    color: rgb(250, 190, 92);
+}
+
+.control-group.success label {
+    color: rgb(49, 159, 72);
+}
+
+/******************************************************************************/
+/* text-alignment of navigators for table pagination						  */
+/******************************************************************************/
+td > div.pagination {
+    margin-top: 0px;
+}
+
+td.navigator.left {
+    text-align: left;
+    padding-left: 0;
+}
+
+td.navigator.right {
+    text-align: right;
+    padding-right: 0;
+}
+
+/******************************************************************************/
+/* styling navigator bootstrap style										  */
+/******************************************************************************/
+.navigator {
+    height: 40px;
+    margin: 20px 0;
+}
+
+.navigator > div {
+    display: inline-block;
+    *display: inline;
+    margin-bottom: 0;
+    margin-left: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    *zoom: 1;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.navigator > div > a, .navigator > div > span, .navigator > div > em {
+    float: left;
+    padding: 0 10px;
+    line-height: 25px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-left-width: 0;
+}
+
+.navigator > div em {
+    font-style: normal !important;
+}
+
+.navigator > div > a:hover, .navigator > div > .goto:hover {
+    background-color: #f5f5f5;
+}
+
+.navigator > div span em {
+    color: #999999;
+    cursor: default;
+    background-color: transparent;
+}
+
+.navigator > div .first {
+    border-left-width: 1px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+}
+
+.navigator > div .last {
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.pagination-centered {
+    text-align: center;
+}
+
+.pagination-right {
+    text-align: right;
+}
+
+/******************************************************************************/
+/* tablesorter																  */
+/******************************************************************************/
+table.tablesorter thead tr .header {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+table.tablesorter thead tr .headerSortUp {
+    background-image: url(../img/asc.gif);
+}
+
+table.tablesorter thead tr .headerSortDown {
+    background-image: url(../img/desc.gif);
+}
+
+/******************************************************************************/
+/* typeahead dropdown should be visible in modal window						  */
+/******************************************************************************/
+.typeahead.dropdown-menu {
+    z-index: 1051;
+}
+
+/******************************************************************************/
+/* select2 drop boxes disabled styling                                        */
+/******************************************************************************/
+.select2-container-disabled input[disabled="disabled"] {
+    width: 100% !important;
+}
+
+.select2-container-disabled li {
+    /* width: 100%; */
+    cursor: not-allowed !important;
+}
+
+/******************************************************************************/
+/* grouping styles															  */
+/******************************************************************************/
+a.accordion-toggle span {
+    font-size: small;
+    color: #bbb;
+}
+
+ul.grouping {
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+}
+
+ul.grouping li {
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 20px;
+    cursor: move;
+}
+
+ul.grouping li blockquote {
+    overflow: hidden;
+}
+
+ul.grouping li .avatar {
+    width: 64px;
+    float: left;
+}
+
+ul.grouping li .avatar img {
+    width: 48px;
+}
+
+/******************************************************************************/
+/* tags styles															  */
+/******************************************************************************/
+div.tags-display {
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
+
+div.tags-display span.tag {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    display: block;
+    float: left;
+    padding: 5px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    color: #707070;
+    font-family: helvetica;
+}
+
+/******************************************************************************/
+/* control-group styles	for scope											  */
+/******************************************************************************/
+.control-group.no-identation label.control-label {
+    display: none;
+}
+
+.control-group.no-identation .controls {
+    margin-left: 10px;
+}
+
+.control-group.no-identenation .controls p.help-block {
+    display: none;
+}
+
+.control-group.no-identenation .controls input.select2-input {
+    color: rgb(227, 50, 56) !important;
+}
+
+/******************************************************************************/
+/* fix bootstrap / font-awesome duplicate icons problem						  */
+/******************************************************************************/
+[class^="icon-"], [class*=" icon-"] {
+    background: none !important;
+    vertical-align: baseline;
+}
+
+.btn [class^="icon-"], .btn [class*=" icon-"] {
+    line-height: 1.3em;
+}
+
+a:hover [class^="icon-"], a:hover [class*=" icon-"] {
+    text-decoration: none;
+}
+
+/******************************************************************************/
+/* vote panel styling														  */
+/******************************************************************************/
+ul.vote {
+    list-style-type: none;
+    display: inline;;
+    margin: 0;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+    width: 3.7em;
+}
+
+ul.vote li h6 {
+    width: 100%;
+    margin: 0 0 5px 0;
+    padding: 0 0 5px 0;
+    font-size: 0.8em;
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 1px solid #BDBCB7;
+}
+
+ul.vote li.score small {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #BDBCB7;
+    padding: 6px 0 5px 0;
+    margin-top: 4px;
+}
+
+ul.vote li.thumbs a, ul.vote li.thumbs em {
+    font-size: 2em;
+    display: block;
+    height: 1.5em;
+    text-align: center;
+    line-height: 30px;
+}
+
+ul.vote li.thumbs a [class^="icon-"], ul.vote li.thumbs a [class*=" icon-"], ul.vote li.thumbs em [class^="icon-"], ul.vote li.thumbs em [class*=" icon-"] {
+    vertical-align: middle;
+}
+
+.votingThumb:hover {
+    text-decoration: none;
+}
+
+.votingThumbGreen {
+    color: green;
+}
+
+.votingThumbGreen:hover {
+    color: green;
+    text-decoration: none;
+}
+
+li .btn {
+    text-align: left;
+}
+
+.btn-link:hover {
+    text-decoration: none;
+}
+
+#messageToInvitedContact {
+    overflow-x: auto;
+    overflow-y: hidden;
+    resize: none;
+    max-height: 200px;
+    min-height: 90px;
+}
+
+.spanSection {
+    position: relative;
+    padding: 10px 20px;
+    margin: 2px 0;
+    font-family: 'ArialMT', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #333333;
+    line-height: normal;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border: 1px solid rgba(121, 121, 121, 1);
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-align: left;
+}
+
+.headerSpanSection {
+    position: relative;
+    padding: 10px 20px;
+    margin: 2px 0;
+    font-family: 'ArialMT', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #333333;
+    line-height: normal;
+    background-color: rgba(211, 211, 211, 1);
+    box-sizing: border-box;
+    border: 1px solid rgba(121, 121, 121, 1);
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-align: left;
+}
+
+.welcomePanel {
+    border: 0;
+    padding: 50px;
+    height: 270px;
+}
+
+.thumbnailHeights {
+    height: 260px;
+    max-height: 260px;
+}
+
+.thumbnailHeightsMedium {
+    height: 350px;
+    max-height: 350px;
+}
+
+.thumbnailsIdeaMargin {
+    margin: 10px 10px 0 0 !important;
+}
+
+.thumbnailsIdeaMargin:hover {
+    cursor: pointer;
+}
+
+.anchorImg:hover {
+    opacity: 0.5;
+}
+
+.caption {
+    height: 140px;
+}
+
+.challengeOwnerCampaign {
+    font-size: small;
+}
+
+.challengeOwnerCampaign tr td img {
+    border-radius: 50%;
+    height: 50px;
+    padding: 5px 0 0 5px;
+}
+
+.challengeTakePart {
+    float: right;
+    width: 60px;
+    position: relative;
+
+}
+
+.ideaUserImage {
+    border-radius: 50%;
+    height: 45px;
+}
+
+.backgroundChallengeImage {
+    height: 250px;
+    width: 100%;
+    margin-top: -30px;
+}
+
+.commonBackgroundImage {
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    width: 1171px;
+    height: 250px;
+}
+
+.heading {
+    position: relative;
+    z-index: 1;
+}
+
+.dashboardHeaderPanel {
+    height: 200px;
+    width: 99.85%;
+    margin-top: -30px;
+    background-color: rgba(235, 235, 235, 1);
+    border: 1px solid;
+}
+
+.dashboardHeaderPanelImage {
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    border-bottom: solid 1px;
+    width: 400px;
+    height: 200px;
+}
+
+.dashboardHeaderPanelTable {
+    margin-left: 20%;
+}
+
+.dashboardHeaderPanelTable td {
+    padding-left: 15px;
+}
+
+.dashboardUserImage {
+    border-radius: 50%;
+    height: 80px;
+}
+
+.dashboardSettingsLink {
+    font-size: 16px;
+}
+
+.userProfilePageImage {
+    border-radius: 50%;
+    height: 60px;
+}
+
+.challengeParticipantsImage {
+    border-radius: 50%;
+    height: 40px;
+}
+
+.dashboardNevigation {
+    margin-left: 20%;
+    margin-top: 60px;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.challengeCretorImage {
+    border-radius: 50%;
+    height: 45px;
+}
+
+.dashboardNevigation .navbar-default .navbar-nav > .active {
+    color: #000;
+    background-color: #d65c14;
+}
+
+.dashboardNevigation .navbar-default .navbar-nav > .active > a,
+.dashboardNevigation .navbar-default .navbar-nav > .active > a:hover,
+.dashboardNevigation .navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background-color: #d65c14;
+}
+
+.subnavigation {
+    width: 100%;
+    margin: 20px 0 -26px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border: 1px solid rgba(121, 121, 121, 1);
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-align: left;
+    z-index: 1;
+    position: relative;
+}
+
+.subnavigation li {
+    padding: 0 15px;
+    z-index: 1;
+    position: relative;
+}
+
+.shareAndFollow {
+    margin: 20px 0;
+    z-index: 1;
+    position: relative;
+}
+
+.shareAndFollow input {
+    margin: 0 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.contributorsList {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style: none;
+}
+
+.greenAnchors a {
+    color: #1abc9c;
+}
+
+.europeLinksList {
+    list-style: none;
+}
+
+.europeLinksList li {
+    margin: 20px 0
+}
+
+.wordBreakSpan {
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    /* Non standard for webkit */
+    /*noinspection CssInvalidPropertyValue*/
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}

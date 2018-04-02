@@ -1,0 +1,166 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <div class="container">
+        <div class="span12 spanSection">
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <li class="span6">
+                        <div class="thumbnail welcomePanel">
+                            <div class="caption">
+                                <h3>
+                                    <wicket:message key="welcome.learnmore.label"/>
+                                </h3>
+                                <h3>Choose your role!</h3>
+                                <a href="#" class="btn btn-default" wicket:id="aboutLink">
+                                    <wicket:message key="welcome.learnmore.button"/>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span6">
+                        <div class="thumbnail welcomePanel">
+                            <div class="caption">
+                                <img class="img" src="./assets/img/socratic_welcome.jpg" style="width: 500px; height: 300px; ">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="row-fluid">
+                <!--LEARN MORE TEXT PLACE HERE -->
+                <ul class="thumbnails" id="learnMoreText" style="display: none;">
+                    <li class="span">
+                        <div class="thumbnail">
+                            <div class="">
+                                <h3>
+                                    <wicket:message key="welcome.learnmore.head"/>
+                                </h3>
+                                <div> test</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <li class="span6">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h4>
+                                    <wicket:message key="welcome.propose.label"/>
+                                </h4>
+                                <p>
+                                    <wicket:message key="welcome.propose.text"/>
+                                </p>
+                                <a href="#" class="btn btn-primary" wicket:id="welcome.challenges.create">
+                                    <wicket:message key="welcome.propose.button"/>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span6">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h4>
+                                    <wicket:message key="welcome.takepart.label"/>
+                                </h4>
+                                <p>
+                                    <wicket:message key="welcome.takepart.text"/>&nbsp;<br/>&nbsp;<br/></p>
+                                <a href="#" class="btn btn-primary" wicket:id="welcome.takePart.link">
+                                    <wicket:message key="welcome.takepart.button"/>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- CHALLENGES -->
+        <div class="span12 spanSection">
+            <p>
+                <span style="font-size:28px;padding: 5px;"><wicket:message key="welcome.challenges"/></span>
+                <a href="#" class="btn btn-default" style="float: right" wicket:id="welcome.challenges.link">
+                    <wicket:message key="welcome.challenges.button"/>
+                </a>
+            </p>
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <!-- wicket repeater -->
+                    <li class="span4 thumbnailsIdeaMargin" style="border: solid 1px; min-height: 515px;"
+                        wicket:id="challengesRepeater"><img wicket:id="profilePicturePreview"
+                                                            style="width: 400px; height: 200px;"> <span
+                            wicket:id="status"></span>
+                        <div style="padding: 10px">
+                            <span wicket:id="challengeAnchorMan"></span>
+                            <div wicket:id="challengePanel"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- IDEAS -->
+        <div class="span12 spanSection">
+            <p>
+                <span style="font-size: 28px; padding: 5px;"><wicket:message key="welcome.ideas"/></span>
+            </p>
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <!-- wicket repeater -->
+                    <li class="span4 thumbnailsIdeaMargin" style="border: solid 1px; min-height: 515px;"
+                        wicket:id="ideasRepeater"><img wicket:id="ideasProfilePicturePreview"
+                                                       style="width: 400px; height: 200px;">
+                        <div style="padding: 10px">
+                            <span wicket:id="ideaAnchorMan"></span>
+                            <div wicket:id="ideaPanel"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="span12 spanSection">
+            <p>
+                <span style="font-size: 28px; padding: 5px;"><wicket:message key="welcome.actions"/></span> <a href="#"
+                                                                                                               class="btn btn-default"
+                                                                                                               style="float: right"
+                                                                                                               wicket:id="welcome.actions.link">
+                <wicket:message
+                        key="welcome.actions.button"/>
+            </a>
+            </p>
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <!-- wicket repeater -->
+                    <li class="span4 thumbnailsIdeaMargin" style="border: solid 1px; min-height: 515px;"
+                        wicket:id="actionsRepeater"><img wicket:id="actionsProfilePicturePreview"
+                                                         style="width: 400px; height: 200px;">
+                        <div style="padding: 10px">
+                            <span wicket:id="actionAnchorMan"></span>
+                            <div wicket:id="actionPanel"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</wicket:extend>

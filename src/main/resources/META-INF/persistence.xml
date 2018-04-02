@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+
+<persistence version="2.0"
+             xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="primary" transaction-type="JTA">
+        <!-- If you are running in a production environment, add a managed data
+            source, the example data source is just for proofs of concept! -->
+        <jta-data-source>java:jboss/datasources/socratic-platform-${ds.name}-DS</jta-data-source>
+        <properties>
+            <!-- Properties for Hibernate -->
+            <property name="hibernate.dialect" value="${dialect}"/>
+            <property name="hibernate.hbm2ddl.auto" value="${ddl}"/>
+            <property name="hibernate.show_sql" value="${show.sql}"/>
+            <property name="hibernate.format_sql" value="${format.sql}"/>
+
+            <!-- Hibernate-Search configuration -->
+            <property name="hibernate.search.default.indexBase" value="\${user.home}/${lucene.index.base}"/>
+            <property name="hibernate.search.default.directory_provider"
+                      value="${lucene.dir.provider}"/>
+        </properties>
+    </persistence-unit>
+</persistence>

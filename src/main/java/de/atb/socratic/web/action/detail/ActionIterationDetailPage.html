@@ -1,0 +1,143 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <section>
+        <div class="" wicket:id="commonHeaderPanel"></div>
+    </section>
+    <section class="spanSection span12">
+        <div class="row-fluid span table">
+            <div class="row-fluid offset1 span10">
+                <div class="span12">
+                    <div class="span7">
+                        <a wicket:id="back"><b>
+                            <wicket:message key="back.text"/>
+                        </b></a><br>
+
+                        <h4 style="display: inline-block;">
+                            <wicket:Message key="iterationNumber.text"/>
+                            <span wicket:id="iterationNumberLabel"></span>
+                        </h4>
+                        <!-- iteration title -->
+                        <h3>
+                            <span class="wordBreakSpan" wicket:id="title"></span>
+                        </h3>
+                    </div>
+
+                    <div class="span5 pull-right">
+                        <div style="display: inline-flex; padding: 20px 0;">
+                            <span> <i class="icon-comment" style="font-size: x-large"></i> <span
+                                    wicket:id="commentsNumberLeftSideOfTheButton"></span>&nbsp;
+                            </span> &nbsp; &nbsp;
+                            <div wicket:id="thumbsUpVoting"></div>
+                        </div>
+
+                        <!-- Call to action and comment & contact buttons -->
+                        <div class="well">
+                            <span class="wordBreakSpan" wicket:id="callToAction"></span><br> <br> <br> <a
+                                class="btn btn-primary" href="#commentsButton">
+                            <wicket:message key="add.comments"/>
+                        </a> <a class="btn btn-primary" wicket:id="createMessage" title="Click to send message"> <span>
+                                    <wicket:message key="contact.button"/>
+                            </span>
+                        </a>
+                        </div>
+
+                        <!-- Contributors -->
+                        <h5>
+                            <wicket:message key="iteration.contributors.label.desc"/>
+                        </h5>
+                        <ul class="thumbnails nav" wicket:id="contributorsContainer">
+                            <li wicket:id="contributors" class="span12" style="margin: 0px !important">
+                                <div style="margin-top: 10px;">
+                                    <a wicket:id="userProfileDetailLink"> <img class="ideaUserImage" wicket:id="con_img"
+                                                                               style="max-height: 45px;"/></a> <span
+                                        class="author" wicket:id="con_name"></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div wicket:id="pagination" class="span12 wordBreakSpan pull-right"></div>
+
+                        <!-- List view for Team tools -->
+                        <div>
+                            <h5>
+                                <wicket:message key="action.definition.label.teamTools"/>
+                            </h5>
+                            <table>
+                                <tbody>
+                                <tr wicket:id="allTeamTools">
+                                    <td><img style="height: 20px; width: 20px;" src="assets/img/Action_team_tools.png"/></td>
+                                    <td><a wicket:id="toolDescriptionViewLabel" href="#">[link text here]</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="span7" style="margin: 0px !important">
+                        <img wicket:id="profilePicturePreview" style="width: 400px; height: 300px;"/>
+                    </div>
+
+                    <!-- aimOfExperiment -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <wicket:message key="iteration.aimOfExperiment.label.desc"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="aimOfExperiment"></span>
+                        </p>
+                    </div>
+
+                    <!-- methodology -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <wicket:message key="iteration.method.label.desc"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="methodology"></span>
+                        </p>
+                    </div>
+
+                    <!-- plan -->
+                    <div class="span7" style="margin: 0px !important">
+                        <h4>
+                            <wicket:message key="iteration.plan.label.desc"/>
+                        </h4>
+                        <p>
+                            <span class="wordBreakSpan" wicket:id="plan"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="span" style="margin: 0px !important">
+                    <hr style="height: 1px; border: none; color: #333; background-color: #333;"/>
+                    <br/> <br/> <br/>
+                </div>
+                <div wicket:id="commentsContainer">
+                    <h4>
+                        <span wicket:id="commentsNumberTopOnTheButton"></span>
+                    </h4>
+                    <div id="commentsButton" class="idea-comments" wicket:id="commentsPanel"></div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="span10" wicket:id="createMessageModalWindow"></div>
+    </section>
+</wicket:extend>

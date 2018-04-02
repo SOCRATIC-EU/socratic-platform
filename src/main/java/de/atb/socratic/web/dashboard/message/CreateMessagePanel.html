@@ -1,0 +1,72 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <form wicket:id="form">
+        <fieldset class="span8">
+            <div class="span8">
+                <h3>
+                    <wicket:message key="message.compose.header.label"/>
+                </h3>
+                <hr>
+                <div class="span8">
+                    <div class="span1">
+                        <span><wicket:message key="message.compose.from.label"/></span>
+                    </div>
+                    <div class="span6">
+                        <span><wicket:message key="message.compose.me.label"/></span>
+                    </div>
+                </div>
+
+                <div class="control-group span8" id="nickNameBorder" wicket:id="nickNameValidationBorder">
+                    <div class="span1">
+                        <wicket:message key="nickName.label.text"/>
+                    </div>
+                    <div class="controls span6" style="display: inline-block;">
+                        <input type="text" class="input-xxlarge" id="nickName"
+                               wicket:message="placeholder:nickName.input.placeholder"
+                               wicket:id="nickName">
+                    </div>
+                </div>
+
+                <div class="control-group span8">
+                    <div class="span1">
+                        <wicket:message key="message.subject.input.label"/>
+                    </div>
+                    <div class="controls span6" style="display: inline-block;" wicket:id="subjectValidationBorder">
+                        <textarea type="text" rows="1" class="input-xxlarge" wicket:id="subject"></textarea>
+                    </div>
+                </div>
+
+                <div class="control-group span8 offset1">
+                    <div class="controls" wicket:id="messageTextValidationBorder">
+                        <textarea type="text" rows="5" class="input-xxlarge" wicket:id="messageText"></textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="submit" class="btn btn-primary pull-right span2" wicket:message="value:message.send.button"
+                               wicket:id="sendButton"/>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</wicket:panel>

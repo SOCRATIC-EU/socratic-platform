@@ -1,0 +1,59 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:panel xmlns:wicket>
+    <style>
+
+        .thumbnail {
+            background-color: white;
+        }
+    </style>
+    <div>
+        <ul class="thumbnails" wicket:id="ideasContainer">
+            <li class="thumbnail" wicket:id="ideasRepeater">
+                <div class="span9" style="padding: 15px;">
+                    <div class="span4" style="margin-left: -3%;">
+                        <h4>
+                            <span class="wordBreakSpan" wicket:id="shortText"></span>
+                        </h4>
+                        <table class="table">
+                            <tr>
+                                <td><img class="challengeCretorImage" wicket:id="profilePicture"/></td>
+                                <td><span class="author" id="refOwner" wicket:id="postedBy.nickName"></span><br> <span
+                                        wicket:id="postedAt"></span></td>
+                                <td><i class="icon-comment icon-2x"></i>&nbsp; <span wicket:id="commentsNumber"
+                                                                                     style="font-size: medium;"></span>&nbsp; <i
+                                        class="icon-thumbs-up icon-2x"></i>&nbsp; <span
+                                        wicket:id="thumbsUpVotes" style="font-size: medium;"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="span3" style="margin-left: 20px;" wicket:id="ideaVotingPanel"></div>
+                    <div class="span2 well" style="margin-left: 20px;">
+                        <span>Is this idea selected for further development?</span>
+                        <select class="span2" wicket:id="ideaDevelopmentPhase"></select>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div wicket:id="pagination" class="pull-left"></div>
+        <div wicket:id="selectIdeaNotificationModal"></div>
+    </div>
+</wicket:panel>

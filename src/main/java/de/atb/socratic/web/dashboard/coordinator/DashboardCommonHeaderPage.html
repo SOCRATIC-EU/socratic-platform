@@ -1,0 +1,50 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <div class="row">
+        <div class="span12" style="margin: 0px !important">
+            <section>
+                <div class="container span12">
+                    <ul class="nav nav-tabs well">
+                        <li id="overviewTab"><a wicket:id="overview">
+                            <wicket:message key="dashboard.overview.label"/>
+                        </a></li>
+                        <li id="processesTab"><a wicket:id="processes">
+                            <wicket:message key="dashboard.processes.label"/>
+                        </a></li>
+                        <li id="activitiesTab"><a wicket:id="activities">
+                            <wicket:message key="dashboard.activities.label"/>
+                        </a></li>
+                        <li id="usersTab"><a wicket:id="users">
+                            <wicket:message key="dashboard.users.label"/>
+                        </a></li>
+                        <li id="messagesTab"><a wicket:id="messages">
+                            <wicket:message key="dashboard.messages.label"/>
+                        </a></li>
+                    </ul>
+                    <div class="span12" style="margin: 0px !important">
+                        <wicket:child/>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</wicket:extend>

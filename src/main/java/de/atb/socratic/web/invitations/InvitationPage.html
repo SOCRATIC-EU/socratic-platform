@@ -1,0 +1,167 @@
+<!--
+  #%L
+  socratic-platform
+  %%
+  Copyright (C) 2016 - 2018 Institute for Applied Systems Technology Bremen GmbH (ATB)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<wicket:extend xmlns:wicket>
+    <script type="text/javascript">
+        var tour;
+
+        function textCounter(field, field2, maxlimit) {
+            var countfield = document.getElementById(field2);
+            if (field.value.length > maxlimit) {
+                field.value = field.value.substring(0, maxlimit);
+                return false;
+            } else {
+                countfield.value = maxlimit - field.value.length;
+                $('#remainingC').html("Remaining:" + countfield.value);
+            }
+
+        }
+
+        function auto_grow(element) {
+            element.style.height = "5px";
+            element.style.height = (element.scrollHeight) + "px";
+        }
+    </script>
+    <section>
+        <div class="page-header">
+            <h2>
+                <wicket:message key="page.your.header"/>
+            </h2>
+        </div>
+
+        <div wicket:id="sendEmailModal"></div>
+        <br/><br/>
+        <div class="row" id="invitations-tour">
+            <div class="span12">
+                <form wicket:id="form">
+                    <fieldset>
+                        <div class="control-group" id="emailBorder" wicket:id="emailValidationBorder">
+                            <label for="email" class="control-label">
+                                <wicket:message key="email.label.text"/>
+                            </label>
+                            <input type="text" class="input-xxlarge" id="email"
+                                   wicket:message="placeholder:email.input.placeholder" wicket:id="emailAddress">
+                        </div>
+                        <div class="control-group" id="messageBorder" wicket:id="messageValidationBorder">
+                            <label for="messageToInvitedContact" class="control-label">
+                                <wicket:message key="message.label.text"/>
+                            </label>
+                            <textarea onkeyup="textCounter(this,'remainingC',100); auto_grow(this);"
+                                      class="input-xxlarge textarea"
+                                      rows="4"
+                                      cols="10"
+                                      id="messageToInvitedContact"
+                                      wicket:message="placeholder:message.input.placeholder"
+                                      wicket:id="messageToInvitedContact">
+                            </textarea>
+                            <br/>
+                            <span id="remainingC" style="color:#999"></span>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"></label>
+                            <div class="controls">
+                                <input class="btn btn-info" type="button" value="Add Email" id="addInvitation"
+                                       wicket:id="addInvitation"/>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br/><br/>
+                </form>
+                <!-- List view for Emails -->
+                <div id="emailContainer" wicket:id="emailContainer">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th class="span3">
+                                <wicket:message key="emails.input.label"/>
+                            </th>
+                            <th class="span6">
+                                <wicket:message key="message.input.label"/>
+                            </th>
+                            <th class="span3">
+                                <wicket:message key="emails.actions.label"/>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr wicket:id="allEmails">
+                            <td><span wicket:id="emailViewLabel"></span></td>
+                            <td>
+                                <blockquote>
+                                    <footer wicket:id="messageViewLabel"/>
+                                </blockquote>
+                            </td>
+                            <td>
+                                <a href="#" wicket:id="actionRemove" wicket:message="title:emails.actions.label.remove">
+                                    <i class="icon-remove-sign"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="control-group right">
+                        <button class="btn btn-info" type="button" value="" wicket:id="submitInvitations">
+                            <wicket:message key="button.invite"/>
+                        </button>
+                        <button class="btn btn-default " type="button" wicket:id="cancelInvitations">
+                            <wicket:message key="button.cancel"/>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/> <br/>
+
+        <!-- List view for Emails -->
+        <div wicket:id="invitedContactsContainer">
+            <div class="page-header">
+                <h2>
+                    <wicket:message key="contacts.invited.label"/>
+                </h2>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        <wicket:message key="emails.input.label"/>
+                    </th>
+                    <th>
+                        <wicket:message key="contacts.invited.status"/>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr wicket:id="invitedContacts">
+                    <td><span wicket:id="invitedContactsLabel"></span></td>
+                    <td><span wicket:id="invitedContactsStatus"></span></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" class="navigator right">
+                        <div wicket:id="paging"></div>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+</wicket:extend>
