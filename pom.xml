@@ -496,9 +496,21 @@
                         <root>src/main/webapp</root>
                     </roots>
                     <excludes>
+                        <exclude>**/src/main/webapp</exclude>
                         <exclude>**/*.json</exclude>
                         <exclude>**/*.uml</exclude>
                     </excludes>
+                    <includes>
+                        <include>**/src/main/webapp/assets/css/eff.css</include>
+                        <include>**/src/main/webapp/assets/css/eff.tinymce.css</include>
+                        <include>**/src/main/webapp/assets/css/innovation-status.css</include>
+                        <include>**/src/main/webapp/assets/css/login-style.css</include>
+                        <include>**/src/main/webapp/assets/css/popUp.css</include>
+                        <include>**/src/main/webapp/assets/js/fileupload/eff-fileupload.js</include>
+                        <include>**/src/main/webapp/assets/js/fileupload/eff-fileupload.js</include>
+                        <include>**/src/main/webapp/assets/js/eff.js</include>
+                        <include>**/src/main/webapp/WEB-INF/socratic-ds.xml</include>
+                    </includes>
 
                     <!--exclude test-scoped dependencies from the 3rd party license-list-->
                     <excludedScopes>test</excludedScopes>
