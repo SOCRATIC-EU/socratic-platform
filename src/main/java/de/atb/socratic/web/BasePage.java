@@ -319,11 +319,10 @@ public abstract class BasePage extends WebPage {
         NavbarButton<LearningCenterPresentation> lc = new NavbarButton<LearningCenterPresentation>(LearningCenterPresentation.class, new StringResourceModel("menu.learning.center.text", this, null));
         NavbarButton<ObservatoryPage> observatory = new NavbarButton<ObservatoryPage>(ObservatoryPage.class, new StringResourceModel("menu.observatory.link.text", this, null));
 
+        navbar.addComponents(NavbarComponents.transform(ComponentPosition.LEFT, helpMenu));
         navbar.addComponents(NavbarComponents.transform(ComponentPosition.RIGHT, observatory));
         navbar.addComponents(NavbarComponents.transform(ComponentPosition.RIGHT, lc));
         navbar.addComponents(NavbarComponents.transform(ComponentPosition.RIGHT, about));
-
-        navbar.addComponents(NavbarComponents.transform(ComponentPosition.LEFT, helpMenu));
 
         // add search form
         navbar.addComponents(newNavbarSearchForm());
